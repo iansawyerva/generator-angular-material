@@ -1,4 +1,4 @@
-# generator-angular-material [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-angular-material [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Google&#39;s Angular Material
 
 ## Installation
@@ -30,7 +30,5 @@ MIT © [Google](https://github.com/iansawyerva)
 
 [npm-image]: https://badge.fury.io/js/generator-angular-material.svg
 [npm-url]: https://npmjs.org/package/generator-angular-material
-[travis-image]: https://travis-ci.org/iansawyerva/generator-angular-material.svg?branch=master
-[travis-url]: https://travis-ci.org/iansawyerva/generator-angular-material
 [daviddm-image]: https://david-dm.org/iansawyerva/generator-angular-material.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/iansawyerva/generator-angular-material
