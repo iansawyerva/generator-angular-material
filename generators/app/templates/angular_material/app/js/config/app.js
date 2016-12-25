@@ -1,1 +1,1 @@
-var AngularMaterialExample = angular.module('AngularMaterialExample', []);
+var AngularMaterialExample = angular.module('AngularMaterialExample', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria']);
