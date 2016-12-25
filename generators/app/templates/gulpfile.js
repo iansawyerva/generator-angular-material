@@ -1,15 +1,25 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
+var uglify = require('gulp-uglify');
+var browserify = require('browserify');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 
 gulp.task('default', ['serve']);
 
 // Static Server + watching js/scss/html files
-gulp.task('serve', ['sass-watch', 'js-watch', 'html-watch'], function() {
+gulp.task('serve', ['sass', 'js', 'html'], function() {
 
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "/",
+            routes: {
+                "/bower_components": "./bower_components",
+                "/js": "./app/js",
+                "/css": "./app/css",
+                "/partials": "./app/partials"
+            }
         }
     });
 
@@ -49,11 +59,20 @@ gulp.task('sass', function() {
 // process JS files and return the stream.
 gulp.task('js', function() {
     return gulp.src('./app/js/**/*js')
-        .pipe(browserify())
+        .pipe(concat('concat.js'))
+        .pipe(gulp.dest('./dist'))
+        .pipe(rename('all.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
 });
 
+// process JS files and return the stream.
+gulp.task('vendor-js', function() {
+    return gulp.src('./bower_components/**/*js')
+        .pipe(browserify())
+        .pipe(gulp.dest('./app/js/vendor'))
+        .pipe(gulp.dest('./dist/js/vendor'));
+});
 
 gulp.task('html-watch', ['html'], function(done) {
     browserSync.reload();
