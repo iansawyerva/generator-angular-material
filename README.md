@@ -13,7 +13,7 @@ npm install -g generator-angular-material
 Then generate your new project:
 
 ```bash
-yo angular-material
+yo angular-material AppName
 ```
 
 ## Getting To Know Yeoman
