@@ -16,12 +16,36 @@ Then generate your new project:
 yo angular-material AppName
 ```
 
-## Getting To Know Yeoman
+Generate a controller:
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+```bash
+yo angular-material:controller ControllerName
+```
+
+Generate a directive:
+
+```bash
+yo angular-material:directive DirectiveName
+```
+
+Generate a verbose directive:
+
+```bash
+yo angular-material:verbose-directive DirectiveName
+```
+
+Generate a factory:
+
+```bash
+yo angular-material:factory FactoryName
+```
+
+Generate a service:
+
+```bash
+yo angular-material:service ServiceName
+```
+
 
 ## License
 
