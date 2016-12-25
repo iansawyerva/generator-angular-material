@@ -5,7 +5,7 @@ var yosay = require('yosay');
 var util = require('util');
 
 var AngularMaterial = yeoman.extend({
-  
+
     prompting: function() {
         // Have Yeoman greet the user.
         this.log(yosay(
@@ -33,6 +33,17 @@ var AngularMaterial = yeoman.extend({
     },
 
     install: function() {
+        var npmdir = process.cwd() + '/' + this.appname;
+
+        process.chdir(npmdir);
+
+        this.installDependencies({
+            bower: true,
+            npm: true
+        });
+    },
+
+    end: function() {
         this.log(this.appname + ' has been created!');
     }
 });

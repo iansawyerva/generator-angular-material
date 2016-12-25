@@ -8,13 +8,13 @@ var service = yeoman.extend({
 
     writing: function(args) {
         if (!args) {
-            this.serviceName = this.appname + '-service.js'
+            this.serviceName = 'example-service.js'
         } else {
             this.serviceName = args + '-service.js'
         }
         this.fs.copy(
             this.templatePath('./service.js'),
-            this.destinationPath(this.appname + '/app/js/services/' + this.serviceName)
+            this.destinationPath('./app/js/services/' + this.serviceName)
         );
     },
 

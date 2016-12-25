@@ -43,7 +43,7 @@ gulp.task('serve', ['sass', 'js', 'html', 'bower'], function() {
 
 gulp.task('index', function() {
     var target = gulp.src('./app/index.html');
-    var sources = gulp.src(["./bower_components/**/*.js", "./app/js/app.js", "./app/js/factories/**/.js", "./app/js/services/**/.js", "./app/js/controllers/**/.js", "./app/js/directives/**/.js", "./app/js/decorators/**/.js", "./bower_components/**/*.css", "./app/css/**/*.css"], { read: false });
+    var sources = gulp.src(["./bower_components/**/*.js", "./config/js/app.js", "./app/js/factories/**/.js", "./app/js/services/**/.js", "./app/js/controllers/**/.js", "./app/js/directives/**/.js", "./app/js/decorators/**/.js", "./bower_components/**/*.css", "./app/css/**/*.css"], { read: false });
 
     return target.pipe(inject(sources))
         .pipe(gulp.dest('./app'));

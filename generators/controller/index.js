@@ -8,13 +8,13 @@ var controller = yeoman.extend({
 
     writing: function(args) {
         if (!args) {
-            this.controllerName = this.appname + '-controller.js'
+            this.controllerName = 'example-controller.js'
         } else {
             this.controllerName = args + '-controller.js'
         }
         this.fs.copy(
             this.templatePath('./controller.js'),
-            this.destinationPath(this.appname + '/app/js/controllers/' + this.controllerName)
+            this.destinationPath('./app/js/controllers/' + this.controllerName)
         );
     },
 

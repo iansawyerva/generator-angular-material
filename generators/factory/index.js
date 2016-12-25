@@ -8,13 +8,13 @@ var factory = yeoman.extend({
 
     writing: function(args) {
         if (!args) {
-            this.factoryName = this.appname + '-factory.js'
+            this.factoryName = 'example-factory.js'
         } else {
             this.factoryName = args + '-factory.js'
         }
         this.fs.copy(
             this.templatePath('./factory.js'),
-            this.destinationPath(this.appname + '/app/js/factories/' + this.factoryName)
+            this.destinationPath('./app/js/factories/' + this.factoryName)
         );
     },
 

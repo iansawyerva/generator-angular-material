@@ -8,13 +8,13 @@ var verboseDirective = yeoman.extend({
 
     writing: function(args) {
         if (!args) {
-            this.directiveName = this.appname + '-directive.js'
+            this.directiveName = 'example-verbose-directive.js'
         } else {
             this.directiveName = args + '-directive.js'
         }
         this.fs.copy(
-            this.templatePath('./directive.js'),
-            this.destinationPath(this.appname + '/app/js/directives/' + this.directiveName)
+            this.templatePath('./verbose-directive.js'),
+            this.destinationPath('./app/js/directives/' + this.directiveName)
         );
     },
 

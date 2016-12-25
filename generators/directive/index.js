@@ -8,13 +8,13 @@ var directive = yeoman.extend({
 
     writing: function(args) {
         if (!args) {
-            this.directiveName = this.appname + '-directive.js'
+            this.directiveName = 'example-directive.js'
         } else {
             this.directiveName = args + '-directive.js'
         }
         this.fs.copy(
             this.templatePath('./directive.js'),
-            this.destinationPath(this.appname + '/app/js/directives/' + this.directiveName)
+            this.destinationPath('./app/js/directives/' + this.directiveName)
         );
     },
 
