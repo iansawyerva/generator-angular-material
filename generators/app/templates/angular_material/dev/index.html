@@ -10,15 +10,12 @@
 </head>
 
 <body ng-app="AngularMaterialExample">
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a ui-sref="home">Home</a></li>
-        <li><a ui-sref="about">About</a></li>
-    </ul>
-</nav>
+    <md-content class="md-padding" layout="row" layout-align="center">
+        <md-nav-bar nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="home" name="home">Home</md-nav-item>
+            <md-nav-item md-nav-sref="about" name="about">About</md-nav-item>
+        </md-nav-bar>
+    </md-content>
     <div ui-view></div>
     <!-- inject:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
