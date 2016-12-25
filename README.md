@@ -1,5 +1,5 @@
 # generator-angular-material [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Google&#39;s Angular Material
+> Google&#39;s Angular Material - in progress
 
 ## Installation
 
