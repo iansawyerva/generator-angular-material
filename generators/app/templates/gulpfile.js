@@ -4,8 +4,8 @@ var sass = require('gulp-sass');
 
 gulp.task('default', ['serve']);
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass', 'js'], function() {
+// Static Server + watching js/scss/html files
+gulp.task('serve', ['sass-watch', 'js-watch', 'html-watch'], function() {
 
     browserSync.init({
         server: {
@@ -20,16 +20,29 @@ gulp.task('serve', ['sass', 'js'], function() {
         });
 
    */
-    gulp.watch("./scss/*.scss", ['sass']).on('change', browserSync.reload);
-    gulp.watch("./app/**/*.html").on('change', browserSync.reload);
-    gulp.watch("./app/js/**/*.js", ['js']).on('change', browserSync.reload);
+
+    gulp.watch("./scss/*.scss", ['sass-watch']);
+
+    gulp.watch("./app/**/*.html", ['html-watch']);
+
+    gulp.watch("./app/js/**/*.js", ['js-watch']);
+});
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('html', function() {
+    return gulp.src("./app/**/*.html")
+        .pipe(sass())
+        .pipe(gulp.dest("./app"))
+        .pipe(gulp.dest("./dist"))
+        .pipe(browserSync.stream());
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("scss/*.scss")
+    return gulp.src("scss/**/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("./app/css"))
+        .pipe(gulp.dest("./dist/css"))
         .pipe(browserSync.stream());
 });
 
@@ -39,4 +52,20 @@ gulp.task('js', function() {
         .pipe(browserify())
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
+});
+
+
+gulp.task('html-watch', ['html'], function(done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('sass-watch', ['sass'], function(done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('js-watch', ['js'], function(done) {
+    browserSync.reload();
+    done();
 });

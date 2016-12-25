@@ -24,6 +24,7 @@
   "homepage": "https://github.com/iansawyerva/generator-angular-material#readme",
   "devDependencies": {
     "browser-sync": "^2.18.5",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0"
   }
 }
