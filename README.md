@@ -34,5 +34,3 @@ MIT © [Google](https://github.com/iansawyerva)
 [travis-url]: https://travis-ci.org/iansawyerva/generator-angular-material
 [daviddm-image]: https://david-dm.org/iansawyerva/generator-angular-material.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/iansawyerva/generator-angular-material
-[coveralls-image]: https://coveralls.io/repos/iansawyerva/generator-angular-material/badge.svg
-[coveralls-url]: https://coveralls.io/r/iansawyerva/generator-angular-material
