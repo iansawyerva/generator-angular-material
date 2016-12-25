@@ -1,9 +1,11 @@
 'use strict';
-var Generator = require('yeoman-generator');
+var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var util = require('util');
 
-module.exports = Generator.extend({
+var AngularMaterial = yeoman.extend({
+  
     prompting: function() {
         // Have Yeoman greet the user.
         this.log(yosay(
@@ -25,7 +27,7 @@ module.exports = Generator.extend({
 
     writing: function() {
         this.fs.copy(
-            this.templatePath('./'),
+            this.templatePath('./angular_material'),
             this.destinationPath(this.appname)
         );
     },
@@ -34,3 +36,5 @@ module.exports = Generator.extend({
         this.log(this.appname + ' has been created!');
     }
 });
+
+module.exports = AngularMaterial;
