@@ -1,1 +1,3 @@
-console.log(true);
+AngularMaterialExample.controller('MyController', ['', function(){
+	
+}]);

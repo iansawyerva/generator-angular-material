@@ -1,1 +1,3 @@
-console.log(true);
+AngularMaterialExample.factory('MyFactory', ['', function(){
+	return {};
+}]);
