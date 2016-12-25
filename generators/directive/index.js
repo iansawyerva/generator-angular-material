@@ -14,7 +14,7 @@ var directive = yeoman.extend({
         }
         this.fs.copy(
             this.templatePath('./directive.js'),
-            this.destinationPath('./app/js/directives/' + this.directiveName)
+            this.destinationPath('./public/js/directives/' + this.directiveName)
         );
     },
 

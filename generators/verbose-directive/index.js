@@ -14,7 +14,7 @@ var verboseDirective = yeoman.extend({
         }
         this.fs.copy(
             this.templatePath('./verbose-directive.js'),
-            this.destinationPath('./app/js/directives/' + this.directiveName)
+            this.destinationPath('./public/js/directives/' + this.directiveName)
         );
     },
 

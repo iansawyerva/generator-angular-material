@@ -14,7 +14,7 @@ var service = yeoman.extend({
         }
         this.fs.copy(
             this.templatePath('./service.js'),
-            this.destinationPath('./app/js/services/' + this.serviceName)
+            this.destinationPath('./public/js/services/' + this.serviceName)
         );
     },
 

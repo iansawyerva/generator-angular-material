@@ -1,3 +1,3 @@
-AngularMaterialExample.controller('MyController', ['', function(){
+AngularMaterialExample.controller('MyController', ['$scope', function($scope){
 	
 }]);

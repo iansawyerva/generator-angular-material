@@ -14,7 +14,7 @@ var factory = yeoman.extend({
         }
         this.fs.copy(
             this.templatePath('./factory.js'),
-            this.destinationPath('./app/js/factories/' + this.factoryName)
+            this.destinationPath('./public/js/factories/' + this.factoryName)
         );
     },
 

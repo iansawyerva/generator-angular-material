@@ -14,7 +14,7 @@ var controller = yeoman.extend({
         }
         this.fs.copy(
             this.templatePath('./controller.js'),
-            this.destinationPath('./app/js/controllers/' + this.controllerName)
+            this.destinationPath('./public/js/controllers/' + this.controllerName)
         );
     },
 

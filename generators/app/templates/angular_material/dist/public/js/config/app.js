@@ -6,13 +6,15 @@ AngularMaterialExample.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('home', {
         url: '/',
-        templateUrl: 'partials/home-partial.html'
+        templateUrl: 'partials/home-partial.html',
+        controller: 'HomeController'
     })
 
     // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-    .state('about', {
-        url: '/about',
-        templateUrl: 'partials/about-partial.html'
+    .state('components', {
+        url: '/components',
+        templateUrl: 'partials/components-partial.html',
+        controller: 'ComponentsController'
     });
 
 });

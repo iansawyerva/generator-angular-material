@@ -37,7 +37,7 @@ gulp.task('serve', ['sass', 'js', 'html', 'bower'], function() {
 
 gulp.task('index', function() {
     var target = gulp.src('./dev/index.html');
-    var sources = gulp.src(["./bower_components/**/*.js", "./public/js/config/app.js", "./public/js/factories/**/.js", "./public/js/services/**/.js", "./public/js/controllers/**/.js", "./public/js/directives/**/.js", "./public/js/decorators/**/.js", "./bower_components/**/*.css", "./public/css/**/*.css"], { read: false });
+    var sources = gulp.src(["./bower_components/**/*.js", "./public/js/config/app.js", "./public/js/factories/**/*.js", "./public/js/services/**/*.js", "./public/js/controllers/**/*.js", "./public/js/directives/**/*.js", "./public/js/decorators/**/*.js", "./bower_components/**/*.css", "./public/css/**/*.css"], { read: false });
 
     return target.pipe(inject(sources))
         .pipe(gulp.dest('./dev'));
