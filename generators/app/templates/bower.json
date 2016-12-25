@@ -1,0 +1,24 @@
+{
+  "name": "Yeoman Generator Angular Material",
+  "homepage": "https://github.com/iansawyerva/generator-angular-material",
+  "authors": [
+    "Google"
+  ],
+  "description": "Google's Angular Material Yeoman Generator",
+  "main": "",
+  "keywords": [
+    "Angular",
+    "Material",
+    "Yeoman",
+    "Google"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

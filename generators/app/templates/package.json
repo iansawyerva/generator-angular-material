@@ -1,0 +1,29 @@
+{
+  "name": "generator-angular-material",
+  "version": "1.0.0",
+  "description": "Google Yeoman Angular Material Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iansawyerva/generator-angular-material.git"
+  },
+  "keywords": [
+    "Google",
+    "Angular",
+    "Material",
+    "Yeoman"
+  ],
+  "author": "Google",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iansawyerva/generator-angular-material/issues"
+  },
+  "homepage": "https://github.com/iansawyerva/generator-angular-material#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1"
+  }
+}
