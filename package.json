@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-material",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Google's Angular Material",
   "homepage": "https://material.angularjs.org/latest/",
   "author": {
@@ -52,7 +52,7 @@
       "mocha": true
     }
   },
-  "repository": "iansawyerva/generator-angular-material",
+  "repository": "https://github.com/iansawyerva/generator-angular-material",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
