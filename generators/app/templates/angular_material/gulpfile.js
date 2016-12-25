@@ -14,13 +14,7 @@ gulp.task('serve', ['sass', 'js', 'html', 'bower'], function() {
 
     browserSync.init({
         server: {
-            baseDir: "./app",
-            routes: {
-                "/vendor": "app/vendor",
-                "/js": "app/js",
-                "/css": "app/css",
-                "/partials": "app/partials"
-            }
+            baseDir: "./app"
         }
     });
 
@@ -34,16 +28,16 @@ gulp.task('serve', ['sass', 'js', 'html', 'bower'], function() {
 
     gulp.watch("./scss/*.scss", ['sass-watch']);
 
-    gulp.watch("./app/**/*.html", ['html-watch']);
+    gulp.watch("./public/**/*.html", ['html-watch']);
 
-    gulp.watch("./app/js/**/*.js", ['js-watch']);
+    gulp.watch("./public/js/**/*.js", ['js-watch']);
 
     gulp.watch("./bower_components/**/*.js", ['bower']);
 });
 
 gulp.task('index', function() {
     var target = gulp.src('./app/index.html');
-    var sources = gulp.src(["./bower_components/**/*.js", "./config/js/app.js", "./app/js/factories/**/.js", "./app/js/services/**/.js", "./app/js/controllers/**/.js", "./app/js/directives/**/.js", "./app/js/decorators/**/.js", "./bower_components/**/*.css", "./app/css/**/*.css"], { read: false });
+    var sources = gulp.src(["./bower_components/**/*.js", "./config/js/app.js", "./public/js/factories/**/.js", "./public/js/services/**/.js", "./public/js/controllers/**/.js", "./public/js/directives/**/.js", "./public/js/decorators/**/.js", "./bower_components/**/*.css", "./public/css/**/*.css"], { read: false });
 
     return target.pipe(inject(sources))
         .pipe(gulp.dest('./app'));
@@ -61,24 +55,24 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
     return gulp.src("scss/**/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest("./app/css"))
-        .pipe(gulp.dest("./dist/css"))
+        .pipe(gulp.dest("./app/public/css"))
+        .pipe(gulp.dest("./dist/public/css"))
         .pipe(browserSync.stream());
 });
 // process JS files and return the stream.
 gulp.task('js', function() {
-    return gulp.src('./app/js/**/*.js')
-        .pipe(gulp.dest('./dist/js'));
+    return gulp.src('./public/js/**/*.js')
+        .pipe(gulp.dest('./dist/public/js'));
 });
 
 // process JS files and return the stream.
 gulp.task('uglify-js', function() {
-    return gulp.src('./app/js/**/*.js')
+    return gulp.src('./public/js/**/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./dist'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./dist/public/js'));
 });
 
 
