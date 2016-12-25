@@ -2,7 +2,7 @@
   "name": "yeoman-generator-angular-material",
   "homepage": "https://github.com/iansawyerva/generator-angular-material",
   "authors": [
-    "Google"
+    "Ian Sawyer"
   ],
   "description": "Google's Angular Material Yeoman Generator",
   "main": "",
