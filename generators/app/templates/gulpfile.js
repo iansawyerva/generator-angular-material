@@ -9,7 +9,7 @@ var sass = require('gulp-sass');
 gulp.task('default', ['serve']);
 
 // Static Server + watching js/scss/html files
-gulp.task('serve', ['sass', 'js', 'html'], function() {
+gulp.task('serve', ['sass', 'js', 'html', 'vendor-js'], function() {
 
     browserSync.init({
         server: {
@@ -61,7 +61,7 @@ gulp.task('js', function() {
     return gulp.src('./app/js/**/*js')
         .pipe(concat('concat.js'))
         .pipe(gulp.dest('./dist'))
-        .pipe(rename('all.js'))
+        .pipe(rename('uglify.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
 });
@@ -69,7 +69,6 @@ gulp.task('js', function() {
 // process JS files and return the stream.
 gulp.task('vendor-js', function() {
     return gulp.src('./bower_components/**/*js')
-        .pipe(browserify())
         .pipe(gulp.dest('./app/js/vendor'))
         .pipe(gulp.dest('./dist/js/vendor'));
 });
