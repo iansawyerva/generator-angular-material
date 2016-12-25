@@ -1,3 +1,3 @@
-AngularMaterialExample.controller('MyController', ['$scope', function($scope){
+<%= AppName %>.controller(<%= ControllerName %>, ['$scope', function($scope){
 	
 }]);

@@ -7,14 +7,19 @@ var util = require('util');
 var controller = yeoman.extend({
 
     writing: function(args) {
+        this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
+        console.log(this.appname)
         if (!args) {
-            this.controllerName = 'example-controller.js'
+            this.controllerName = this.appname.replace(/ /g, ' ');
         } else {
-            this.controllerName = args + '-controller.js'
+            this.controllerName = args.replace(/ /g, ' ');
         }
-        this.fs.copy(
+        this.fs.copyTpl(
             this.templatePath('./controller.js'),
-            this.destinationPath('./public/js/controllers/' + this.controllerName)
+            this.destinationPath('./public/js/controllers/' + this.controllerName + '-controller.js'), {
+                AppName: this.appname,
+                ControllerName: this.controllerName + 'Controller'
+            }
         );
     },
 
