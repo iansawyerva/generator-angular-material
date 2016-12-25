@@ -11,10 +11,10 @@ AngularMaterialExample.config(function($stateProvider, $urlRouterProvider) {
     })
 
     // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-    .state('components', {
-        url: '/components',
-        templateUrl: 'partials/components-partial.html',
-        controller: 'ComponentsController'
+    .state('about', {
+        url: '/about',
+        templateUrl: 'partials/about-partial.html',
+        controller: 'AboutController'
     });
 
 });
