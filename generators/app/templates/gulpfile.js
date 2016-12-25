@@ -13,12 +13,12 @@ gulp.task('serve', ['sass', 'js', 'html', 'vendor-js'], function() {
 
     browserSync.init({
         server: {
-            baseDir: "/",
+            baseDir: "./app",
             routes: {
-                "/bower_components": "./bower_components",
-                "/js": "./app/js",
-                "/css": "./app/css",
-                "/partials": "./app/partials"
+                "/vendor": "app/vendor",
+                "/js": "app/js",
+                "/css": "app/css",
+                "/partials": "app/partials"
             }
         }
     });
@@ -41,7 +41,6 @@ gulp.task('serve', ['sass', 'js', 'html', 'vendor-js'], function() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('html', function() {
     return gulp.src("./app/**/*.html")
-        .pipe(sass())
         .pipe(gulp.dest("./app"))
         .pipe(gulp.dest("./dist"))
         .pipe(browserSync.stream());
@@ -69,8 +68,8 @@ gulp.task('js', function() {
 // process JS files and return the stream.
 gulp.task('vendor-js', function() {
     return gulp.src('./bower_components/**/*js')
-        .pipe(gulp.dest('./app/js/vendor'))
-        .pipe(gulp.dest('./dist/js/vendor'));
+        .pipe(gulp.dest('./app/vendor'))
+        .pipe(gulp.dest('./dist/vendor'));
 });
 
 gulp.task('html-watch', ['html'], function(done) {
