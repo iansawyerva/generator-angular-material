@@ -19,32 +19,46 @@ yo angular-material AppName
 Generate a controller:
 
 ```bash
-yo angular-material:controller ControllerName
+yo angular-material:controller filename
 ```
+
+Adds extension -controller.js to filename
 
 Generate a directive:
 
 ```bash
-yo angular-material:directive DirectiveName
+yo angular-material:directive filename
 ```
+
+Adds extension -directive.js to filename
+
 
 Generate a verbose directive:
 
 ```bash
-yo angular-material:verbose-directive DirectiveName
+yo angular-material:verbose-directive filename
 ```
+
+Adds extension -directive.js to filename
+
 
 Generate a factory:
 
 ```bash
-yo angular-material:factory FactoryName
+yo angular-material:factory filename
 ```
+
+Adds extension -factory.js to filename
+
 
 Generate a service:
 
 ```bash
-yo angular-material:service ServiceName
+yo angular-material:service filename
 ```
+
+
+Adds extension -service.js to filename
 
 
 ## License
