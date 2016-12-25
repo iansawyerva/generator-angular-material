@@ -14,7 +14,7 @@ gulp.task('serve', ['sass', 'js', 'html', 'bower'], function() {
 
     browserSync.init({
         server: {
-            baseDir: "./app"
+            baseDir: "./dev"
         }
     });
 
@@ -36,17 +36,17 @@ gulp.task('serve', ['sass', 'js', 'html', 'bower'], function() {
 });
 
 gulp.task('index', function() {
-    var target = gulp.src('./app/index.html');
-    var sources = gulp.src(["./bower_components/**/*.js", "./config/js/app.js", "./public/js/factories/**/.js", "./public/js/services/**/.js", "./public/js/controllers/**/.js", "./public/js/directives/**/.js", "./public/js/decorators/**/.js", "./bower_components/**/*.css", "./public/css/**/*.css"], { read: false });
+    var target = gulp.src('./dev/index.html');
+    var sources = gulp.src(["./bower_components/**/*.js", "./public/js/config/app.js", "./public/js/factories/**/.js", "./public/js/services/**/.js", "./public/js/controllers/**/.js", "./public/js/directives/**/.js", "./public/js/decorators/**/.js", "./bower_components/**/*.css", "./public/css/**/*.css"], { read: false });
 
     return target.pipe(inject(sources))
-        .pipe(gulp.dest('./app'));
+        .pipe(gulp.dest('./dev'));
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('html', function() {
-    return gulp.src("./app/**/*.html")
-        .pipe(gulp.dest("./app"))
+    return gulp.src("./public/**/*.html")
+        .pipe(gulp.dest("./dev"))
         .pipe(gulp.dest("./dist"))
         .pipe(browserSync.stream());
 });
@@ -55,13 +55,14 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
     return gulp.src("scss/**/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest("./app/public/css"))
+        .pipe(gulp.dest("./dev/public/css"))
         .pipe(gulp.dest("./dist/public/css"))
         .pipe(browserSync.stream());
 });
 // process JS files and return the stream.
 gulp.task('js', function() {
     return gulp.src('./public/js/**/*.js')
+        .pipe(gulp.dest('./dev/public/js'))
         .pipe(gulp.dest('./dist/public/js'));
 });
 
@@ -79,7 +80,7 @@ gulp.task('uglify-js', function() {
 // process JS files and return the stream.
 gulp.task('bower', ['index'], function() {
     return gulp.src(["./bower_components/**/*.min.js", "./bower_components/**/*.min.css"])
-        .pipe(gulp.dest('./app/bower_components'))
+        .pipe(gulp.dest('./dev/bower_components'))
         .pipe(gulp.dest('./dist/bower_components'));
 });
 
