@@ -38,6 +38,18 @@ var AngularMaterial = yeoman.extend({
                     AppName: this.appname
                 }
             ),
+        this.fs.copyTpl(
+                this.templatePath('./about-controller.js'),
+                this.destinationPath(this.appname + '/public/js/controllers/about-controller.js'), {
+                    AppName: this.appname
+                }
+            ),
+        this.fs.copyTpl(
+                this.templatePath('./home-controller.js'),
+                this.destinationPath(this.appname + '/public/js/controllers/home-controller.js'), {
+                    AppName: this.appname
+                }
+            ),
             this.fs.copy(
                 this.templatePath('./angular_material'),
                 this.destinationPath(this.appname)
