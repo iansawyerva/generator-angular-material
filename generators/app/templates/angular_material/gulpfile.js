@@ -40,6 +40,7 @@ gulp.task('index', function() {
     var sources = gulp.src(["./bower_components/**/*.js", "./public/js/config/app.js", "./public/js/factories/**/*.js", "./public/js/services/**/*.js", "./public/js/controllers/**/*.js", "./public/js/directives/**/*.js", "./public/js/decorators/**/*.js", "./bower_components/**/*.css", "./public/css/**/*.css"], { read: false });
 
     return target.pipe(inject(sources))
+        .pipe(gulp.dest('./dist'))
         .pipe(gulp.dest('./dev'));
 });
 
