@@ -23,39 +23,6 @@ Run server
 sudo gulp | gulp [windows]
 ```
 
-
-Generate a component:
-
-```bash
-yo angular-material:component componentName path/to/partial 
-```
-
-Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
-
-Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory
-
-You might need to restart gulp for the dependencies to be injected when using the component command. (fix in progress)
-
-Component list - must use exact name
-- autocomplete
-- card
-- checkbox
-- chips
-- content
-- dialog
-- fab-speed-dial
-- fab-toolbar
-- menu
-- menu-bar
-- nav-bar
-- select
-- sidenav
-- slider
-- tabs
-
-Refer to https://material.angularjs.org/latest/ for how to use these components
-
-
 Generate a controller:
 
 ```bash
@@ -97,8 +64,39 @@ Generate a service:
 yo angular-material:service serviceName 
 ```
 
-
 Adds extension -service.js to filename and Service to serviceName
+
+Generate a component:
+
+```bash
+yo angular-material:component componentName path/to/partial 
+```
+
+Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
+
+Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory
+
+You might need to restart gulp for the dependencies to be injected when using the component command. (fix in progress)
+
+Component list - must use exact name
+- autocomplete
+- card
+- checkbox
+- chips
+- content
+- dialog
+- fab-speed-dial
+- fab-toolbar
+- menu
+- menu-bar
+- nav-bar
+- select
+- sidenav
+- slider
+- tabs
+
+Refer to https://material.angularjs.org/latest/ for how to use these components
+
 
 
 All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
