@@ -16,6 +16,14 @@ Then generate your new project:
 yo angular-material appName
 ```
 
+Run server
+
+
+```bash
+gulp | sudo gulp
+```
+
+
 Generate a controller:
 
 ```bash
