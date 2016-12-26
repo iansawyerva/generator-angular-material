@@ -19,7 +19,7 @@ yo angular-material appName
 Generate a controller:
 
 ```bash
-yo angular-material:controller controlerName
+yo angular-material:controller controllerName
 ```
 
 Adds extension -controller.js to filename and Controller to controllerName
