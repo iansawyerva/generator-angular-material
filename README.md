@@ -23,6 +23,7 @@ Run server
 sudo gulp | gulp [windows]
 ```
 
+
 Generate a component:
 
 ```bash
@@ -51,6 +52,8 @@ Component list - must use exact name
 - sidenav
 - slider
 - tabs
+
+Refer to https://material.angularjs.org/latest/ for how to use these components
 
 
 Generate a controller:
@@ -96,9 +99,6 @@ yo angular-material:service serviceName
 
 
 Adds extension -service.js to filename and Service to serviceName
-
-
-Refer to https://material.angularjs.org/latest/ for how to use these components
 
 
 All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
