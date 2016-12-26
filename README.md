@@ -78,6 +78,19 @@ Component list - must use exact name
 - datepicker
 - fab-speed-dial
 - fab-toolbar
+- grid-list
+- list
+- menu
+- nav-bar
+- select
+- sidenav
+- slider
+- tabs
+- toolbar
+
+
+Refer to https://material.angularjs.org/latest/ for how to use these components
+
 
 ## License
 
