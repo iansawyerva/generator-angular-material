@@ -14,10 +14,10 @@ var directive = yeoman.extend({
             this.directiveName = args.replace(/ /g, ' ');
         }
         this.fs.copyTpl(
-            this.templatePath('./directive.js'),
+            this.templatePath('./verbose-directive.js'),
             this.destinationPath('./public/js/directives/' + this.directiveName + '-directive.js'), {
                 AppName: this.appname,
-                DirectiveName: this.DirectiveName + 'directive'
+                DirectiveName: this.directiveName + 'Directive'
             }
         );
     },
