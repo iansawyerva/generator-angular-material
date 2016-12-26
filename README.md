@@ -61,6 +61,18 @@ yo angular-material:service serviceName
 Adds extension -service.js to filename and Service to serviceName
 
 
+Generate a component:
+
+```bash
+yo angular-material:component componentName /path/to/partial 
+```
+
+For this to work, each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
+
+Component list - must use exact name
+- autocomplete
+
+
 ## License
 
 MIT © [Google](https://github.com/iansawyerva)
