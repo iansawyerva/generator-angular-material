@@ -85,7 +85,6 @@ Component list - must use exact name
 - checkbox
 - chips
 - content
-- datepicker
 - dialog
 - fab-speed-dial
 - fab-toolbar
