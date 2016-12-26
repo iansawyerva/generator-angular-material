@@ -74,9 +74,9 @@ yo angular-material:component componentName path/to/partial
 
 Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
 
-Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory
+Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
 
-You might need to restart gulp for the dependencies to be injected when using the component command. (fix in progress)
+You might need to restart gulp for the dependencies to be injected when using the component command. (fix in progress).
 
 Component list - must use exact name
 - autocomplete
@@ -95,7 +95,7 @@ Component list - must use exact name
 - slider
 - tabs
 
-Refer to https://material.angularjs.org/latest/ for how to use these components
+Refer to https://material.angularjs.org/latest/ for how to use these components.
 
 
 
