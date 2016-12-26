@@ -1,0 +1,130 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/isawyer/Desktop/local/generator-angular-material',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/isawyer/.npm/generator-angular-material/1.2.9/package.tgz not in flight; packing
+9 info lifecycle generator-angular-material@1.2.9~prepublish: generator-angular-material@1.2.9
+10 warn lifecycle generator-angular-material@1.2.9~prepublish: cannot run in wd %s %s (wd=%s) generator-angular-material@1.2.9 gulp prepublish /home/isawyer/Desktop/local/generator-angular-material
+11 verbose tar pack [ '/home/isawyer/.npm/generator-angular-material/1.2.9/package.tgz',
+11 verbose tar pack   '/home/isawyer/Desktop/local/generator-angular-material' ]
+12 verbose tarball /home/isawyer/.npm/generator-angular-material/1.2.9/package.tgz
+13 verbose folder /home/isawyer/Desktop/local/generator-angular-material
+14 verbose addLocalTarball adding from inside cache /home/isawyer/.npm/generator-angular-material/1.2.9/package.tgz
+15 silly cache afterAdd generator-angular-material@1.2.9
+16 verbose afterAdd /home/isawyer/.npm/generator-angular-material/1.2.9/package/package.json not in flight; writing
+17 verbose afterAdd /home/isawyer/.npm/generator-angular-material/1.2.9/package/package.json written
+18 silly publish { name: 'generator-angular-material',
+18 silly publish   version: '1.2.9',
+18 silly publish   description: 'Google\'s Angular Material',
+18 silly publish   homepage: 'https://github.com/iansawyerva/generator-angular-material',
+18 silly publish   author:
+18 silly publish    { name: 'Ian Sawyer',
+18 silly publish      email: 'ian.sawyer.js@gmail.com',
+18 silly publish      url: 'https://github.com/iansawyerva' },
+18 silly publish   files: [ 'generators' ],
+18 silly publish   main: 'generators/index.js',
+18 silly publish   keywords:
+18 silly publish    [ 'yeoman-generator',
+18 silly publish      'Angular Material',
+18 silly publish      'Google',
+18 silly publish      'AngularJS',
+18 silly publish      'Google Material' ],
+18 silly publish   dependencies:
+18 silly publish    { chalk: '^1.1.3',
+18 silly publish      'yeoman-generator': '^1.0.1',
+18 silly publish      yosay: '^1.2.1' },
+18 silly publish   devDependencies:
+18 silly publish    { 'browser-sync': '^2.18.5',
+18 silly publish      browserify: '^13.1.1',
+18 silly publish      eslint: '^3.1.1',
+18 silly publish      'eslint-config-xo-space': '^0.15.0',
+18 silly publish      'gulp-concat': '^2.6.1',
+18 silly publish      'gulp-rename': '^1.2.2',
+18 silly publish      'gulp-sass': '^3.0.0',
+18 silly publish      'gulp-uglify': '^2.0.0',
+18 silly publish      'gulp-coveralls': '^0.1.0',
+18 silly publish      'gulp-eslint': '^3.0.1',
+18 silly publish      'gulp-exclude-gitignore': '^1.0.0',
+18 silly publish      'gulp-inject': '^4.2.0',
+18 silly publish      'gulp-istanbul': '^1.0.0',
+18 silly publish      'gulp-line-ending-corrector': '^1.0.1',
+18 silly publish      'gulp-mocha': '^3.0.1',
+18 silly publish      'gulp-nsp': '^2.1.0',
+18 silly publish      'gulp-plumber': '^1.0.0',
+18 silly publish      gulp: '^3.9.1',
+18 silly publish      'yeoman-assert': '^2.2.1',
+18 silly publish      'yeoman-test': '^1.6.0' },
+18 silly publish   eslintConfig: { extends: 'xo-space', env: { mocha: true } },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/iansawyerva/generator-angular-material.git' },
+18 silly publish   scripts: { prepublish: 'gulp prepublish', test: 'gulp' },
+18 silly publish   license: 'MIT',
+18 silly publish   readme: '# generator-angular-material [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]\n> Google&#39;s Angular Material - in progress\n\n## Installation\n\nFirst, install [Yeoman](http://yeoman.io) and generator-angular-material using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).\n\n```bash\nnpm install -g yo\nnpm install -g generator-angular-material\n```\n\nThen generate your new project:\n\n```bash\nyo angular-material appName\n```\n\nRun server\n\n\n```bash\nsudo gulp | gulp [windows]\n```\n\n\nGenerate a controller:\n\n```bash\nyo angular-material:controller controllerName\n```\n\nAdds extension -controller.js to filename and Controller to controllerName\n\nGenerate a directive:\n\n```bash\nyo angular-material:directive directiveName\n```\n\nAdds extension -directive.js to filename and Directive to directiveName\n\n\nGenerate a verbose directive:\n\n```bash\nyo angular-material:verbose-directive directiveName\n```\n\nAdds extension -directive.js to filename and Directive to directiveName\n\n\nGenerate a factory:\n\n```bash\nyo angular-material:factory factoryName\n```\n\nAdds extension -factory.js to filename and Factory to factoryName\n\n\nGenerate a service:\n\n```bash\nyo angular-material:service serviceName \n```\n\n\nAdds extension -service.js to filename and Service to serviceName\n\n\nGenerate a component:\n\n```bash\nyo angular-material:component componentName path/to/partial \n```\n\nFor this to work, each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.\n\nComponent list - must use exact name\n- autocomplete\n- card\n- checkbox\n- chips\n- content\n- datepicker\n- fab-speed-dial\n- fab-toolbar\n- grid-list\n- list\n- menu\n- menu-bar\n- nav-bar\n- select\n- sidenav\n- slider\n- tabs\n- toolbar\n\n\nRefer to https://material.angularjs.org/latest/ for how to use these components\n\n\nAll JavaScript/CSS dependencies will be automatically injected into your dev/dist index.html in proper order when running the browsersync server.\n\nAll bower components come first. Use bower when installing any new modules and you won\'t have any issues. Just be sure to inject them in your app module!\n\n\n## License\n\nMIT © [Google](https://github.com/iansawyerva)\n\n\n[npm-image]: https://badge.fury.io/js/generator-angular-material.svg\n[npm-url]: https://npmjs.org/package/generator-angular-material\n[daviddm-image]: https://david-dm.org/iansawyerva/generator-angular-material.svg?theme=shields.io\n[daviddm-url]: https://david-dm.org/iansawyerva/generator-angular-material',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: 'a930b496399c7730f7934656ca14bb3a28004599',
+18 silly publish   bugs: { url: 'https://github.com/iansawyerva/generator-angular-material/issues' },
+18 silly publish   _id: 'generator-angular-material@1.2.9',
+18 silly publish   _shasum: '87056206d0ca27772f730e7b1c66a3cfb713e431',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name generator-angular-material
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/generator-angular-material
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/isawyer/.npm/generator-angular-material/1.2.9/package.tgz
+26 verbose request uri https://registry.npmjs.org/generator-angular-material
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 1:33:50 AM
+29 verbose request using bearer token for auth
+30 verbose request id c9255a25c5eea498
+31 http request PUT https://registry.npmjs.org/generator-angular-material
+32 http 403 https://registry.npmjs.org/generator-angular-material
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Mon, 26 Dec 2016 06:33:51 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-iad2148-IAD',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1482734030.213001,VS0,VE1353',
+33 verbose headers   vary: 'Accept-Encoding' }
+34 verbose request invalidating /home/isawyer/.npm/registry.npmjs.org/generator-angular-material on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 1.2.9." : generator-angular-material
+36 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+36 verbose stack     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+36 verbose stack     at emitTwo (events.js:87:13)
+36 verbose stack     at Request.emit (events.js:172:7)
+36 verbose stack     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+36 verbose stack     at emitOne (events.js:82:20)
+36 verbose stack     at Request.emit (events.js:169:7)
+36 verbose stack     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid generator-angular-material
+39 verbose cwd /home/isawyer/Desktop/local/generator-angular-material
+40 error Linux 4.4.0-57-generic
+41 error argv "/usr/bin/nodejs" "/usr/bin/npm" "publish"
+42 error node v4.2.6
+43 error npm  v3.5.2
+44 error code E403
+45 error "You cannot publish over the previously published version 1.2.9." : generator-angular-material
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]

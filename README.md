@@ -101,10 +101,15 @@ Component list - must use exact name
 Refer to https://material.angularjs.org/latest/ for how to use these components
 
 
-All JavaScript/CSS dependencies will be automatically injected into your dev/dist index.html in proper order when running the browsersync server.
+All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
 
 All bower components come first. Use bower when installing any new modules and you won't have any issues. Just be sure to inject them in your app module!
 
+Besides for editing the main "index.html" file in the "dev" directory, all edits should be contained within the "public", "scss", and "spec" directories.
+
+@TODO 
+	- dist gulp tasks
+	- karma setup
 
 ## License
 
