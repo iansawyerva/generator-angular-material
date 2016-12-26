@@ -20,7 +20,7 @@ Run server
 
 
 ```bash
-sudo gulp | gulp [windows]
+sudo gulp | gulp
 ```
 
 Generate a controller:
