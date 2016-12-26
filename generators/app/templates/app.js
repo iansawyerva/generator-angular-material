@@ -10,7 +10,6 @@ var <%= AppName %> = angular.module('AngularMaterialExample', ['ngMaterial', 'ng
         controller: 'HomeController'
     })
 
-    // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
     .state('about', {
         url: '/about',
         templateUrl: 'partials/about-partial.html',
