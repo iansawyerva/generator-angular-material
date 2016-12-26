@@ -106,8 +106,12 @@ All bower components come first. Use bower when installing any new modules and y
 Besides for editing the main "index.html" file in the "dev" directory, all edits should be contained within the "public", "scss", and "spec" directories.
 
 @TODO 
+
 	- dist gulp tasks
+
 	- karma setup
+
+	- Update to count for Windows directories
 
 ## License
 
