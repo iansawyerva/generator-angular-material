@@ -38,12 +38,7 @@ var service = yeoman.extend({
     },
 
     install: function(arg1, arg2) {
-        this.partial = this.fs.read(arg2);
-        if (this.partial.indexOf("{{component}}") > -1) {
-            this.log(arg1 + ' component has been injected into ' + arg2 + '!');
-        } else {
-            this.log('Could not find placeholder. eg {{component}}');
-        }
+        this.log(arg1 + ' component has been injected into ' + arg2 + '!');
     }
 });
 
