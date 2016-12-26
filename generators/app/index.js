@@ -26,7 +26,7 @@ var AngularMaterial = yeoman.extend({
                     this.appname = answers.name.replace(/ /g, ' ');
                 }
                 this.appname = this.appname.replace(/ /g, ' ');
-                this.log('Selected app name: ', this.appname);
+                this.log('Creating ', this.appname);
             });
         }
     },
