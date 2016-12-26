@@ -30,7 +30,7 @@ Generate a component:
 yo angular-material:component componentName path/to/partial 
 ```
 
-For this to work, each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
+Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
 
 Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory
 
