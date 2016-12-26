@@ -43,7 +43,6 @@ gulp.task('index', function() {
         .pipe(gulp.dest('./dev'));
 });
 
-// Compile sass into CSS & auto-inject into browsers
 gulp.task('html', function() {
     return gulp.src("./public/**/*.html")
         .pipe(gulp.dest("./dev"))
@@ -53,20 +52,19 @@ gulp.task('html', function() {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("scss/**/*.scss")
+    return gulp.src("./scss/**/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("./dev/public/css"))
         .pipe(gulp.dest("./dist/public/css"))
         .pipe(browserSync.stream());
 });
-// process JS files and return the stream.
+
 gulp.task('js', function() {
     return gulp.src('./public/js/**/*.js')
         .pipe(gulp.dest('./dev/public/js'))
         .pipe(gulp.dest('./dist/public/js'));
 });
 
-// process JS files and return the stream.
 gulp.task('uglify-js', function() {
     return gulp.src('./public/js/**/*.js')
         .pipe(concat('all.js'))
@@ -76,8 +74,6 @@ gulp.task('uglify-js', function() {
         .pipe(gulp.dest('./dist/public/js'));
 });
 
-
-// process JS files and return the stream.
 gulp.task('bower', ['index'], function() {
     return gulp.src(["./bower_components/**/*.min.js", "./bower_components/**/*.min.css"])
         .pipe(gulp.dest('./dev/bower_components'))
