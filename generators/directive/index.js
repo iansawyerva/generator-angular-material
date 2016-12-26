@@ -7,14 +7,18 @@ var util = require('util');
 var directive = yeoman.extend({
 
     writing: function(args) {
+        this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
         if (!args) {
-            this.directiveName = 'example-directive.js'
+            this.directiveName = this.appname.replace(/ /g, ' ');
         } else {
-            this.directiveName = args + '-directive.js'
+            this.directiveName = args.replace(/ /g, ' ');
         }
-        this.fs.copy(
+        this.fs.copyTpl(
             this.templatePath('./directive.js'),
-            this.destinationPath('./public/js/directives/' + this.directiveName)
+            this.destinationPath('./public/js/directives/' + this.directiveName + '-directive.js'), {
+                AppName: this.appname,
+                DirectiveName: this.directiveName + 'Directive'
+            }
         );
     },
 

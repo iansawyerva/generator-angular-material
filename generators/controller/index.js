@@ -8,7 +8,6 @@ var controller = yeoman.extend({
 
     writing: function(args) {
         this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
-        console.log(this.appname)
         if (!args) {
             this.controllerName = this.appname.replace(/ /g, ' ');
         } else {

@@ -4,17 +4,21 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var util = require('util');
 
-var verboseDirective = yeoman.extend({
+var directive = yeoman.extend({
 
     writing: function(args) {
+        this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
         if (!args) {
-            this.directiveName = 'example-verbose-directive.js'
+            this.directiveName = this.appname.replace(/ /g, ' ');
         } else {
-            this.directiveName = args + '-directive.js'
+            this.directiveName = args.replace(/ /g, ' ');
         }
-        this.fs.copy(
-            this.templatePath('./verbose-directive.js'),
-            this.destinationPath('./public/js/directives/' + this.directiveName)
+        this.fs.copyTpl(
+            this.templatePath('./directive.js'),
+            this.destinationPath('./public/js/directives/' + this.directiveName + '-directive.js'), {
+                AppName: this.appname,
+                DirectiveName: this.DirectiveName + 'directive'
+            }
         );
     },
 
@@ -23,4 +27,4 @@ var verboseDirective = yeoman.extend({
     }
 });
 
-module.exports = verboseDirective;
+module.exports = directive;

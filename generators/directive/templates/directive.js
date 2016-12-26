@@ -1,4 +1,4 @@
-AngularMaterialExample.directive('MyDirective', ['', function(){
+<%= AppName %>.directive(<%= DirectiveName %>, ['', function(){
 	return {
 		link: function($scope, elem, attrs, controller) {
 			

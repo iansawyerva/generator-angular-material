@@ -1,3 +1,3 @@
-AngularMaterialExample.service('MyService', ['', function(){
+<%= AppName %>.service(<%= ServiceName %>, ['', function(){
 	
 }]);

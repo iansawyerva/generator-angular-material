@@ -1,3 +1,3 @@
-AngularMaterialExample.factory('MyFactory', ['', function(){
+<%= AppName %>.factory(<%= FactoryName %>, ['', function(){
 	return {};
 }]);

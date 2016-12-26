@@ -7,14 +7,18 @@ var util = require('util');
 var factory = yeoman.extend({
 
     writing: function(args) {
+        this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
         if (!args) {
-            this.factoryName = 'example-factory.js'
+            this.factoryName = this.appname.replace(/ /g, ' ');
         } else {
-            this.factoryName = args + '-factory.js'
+            this.factoryName = args.replace(/ /g, ' ');
         }
-        this.fs.copy(
+        this.fs.copyTpl(
             this.templatePath('./factory.js'),
-            this.destinationPath('./public/js/factories/' + this.factoryName)
+            this.destinationPath('./public/js/factories/' + this.factoryName + '-factory.js'), {
+                AppName: this.appname,
+                FactoryName: this.factoryName + 'Factory'
+            }
         );
     },
 
