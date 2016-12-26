@@ -20,7 +20,7 @@ Run server
 
 
 ```bash
-gulp | sudo gulp
+sudo gulp
 ```
 
 
