@@ -13,52 +13,52 @@ npm install -g generator-angular-material
 Then generate your new project:
 
 ```bash
-yo angular-material AppName
+yo angular-material appName
 ```
 
 Generate a controller:
 
 ```bash
-yo angular-material:controller controler name
+yo angular-material:controller controlerName
 ```
 
-Adds extension -controller.js to filename and Controller to controller name
+Adds extension -controller.js to filename and Controller to controllerName
 
 Generate a directive:
 
 ```bash
-yo angular-material:directive directive name
+yo angular-material:directive directiveName
 ```
 
-Adds extension -directive.js to filename and Directive to directive name
+Adds extension -directive.js to filename and Directive to directiveName
 
 
 Generate a verbose directive:
 
 ```bash
-yo angular-material:verbose-directive directive name
+yo angular-material:verbose-directive directiveName
 ```
 
-Adds extension -directive.js to filename and Directive to directive name
+Adds extension -directive.js to filename and Directive to directiveName
 
 
 Generate a factory:
 
 ```bash
-yo angular-material:factory factory name
+yo angular-material:factory factoryName
 ```
 
-Adds extension -factory.js to filename and Factory to factory name
+Adds extension -factory.js to filename and Factory to factoryName
 
 
 Generate a service:
 
 ```bash
-yo angular-material:service service name 
+yo angular-material:service serviceName 
 ```
 
 
-Adds extension -service.js to filename and Service to service name
+Adds extension -service.js to filename and Service to serviceName
 
 
 ## License
