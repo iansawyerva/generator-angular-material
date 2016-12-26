@@ -79,7 +79,7 @@ For this to work, each time you inject a component you must specify {{component}
 
 Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory
 
-You might need to restart gulp for the dependencies to be injected when using the components. (fix in progress)
+You might need to restart gulp for the dependencies to be injected when using the component command. (fix in progress)
 
 Component list - must use exact name
 - autocomplete
