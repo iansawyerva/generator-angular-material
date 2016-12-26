@@ -7,13 +7,12 @@ var util = require('util');
 var AngularMaterial = yeoman.extend({
 
     prompting: function(args) {
-        // Have Yeoman greet the user.
-        if (this.args) {
+        try {
             this.appname = args.replace(/ /g, ' ');
             this.log(yosay(
                 chalk.red('Creating ' + this.appname)
             ));
-        } else {
+        } catch (e) {
             this.log(yosay(
                 'Welcome to ' + chalk.red('Angular Material')
             ));
@@ -34,15 +33,15 @@ var AngularMaterial = yeoman.extend({
 
     writing: function() {
         this.fs.copyTpl(
-            this.templatePath('./app.js'),
-            this.destinationPath(this.appname + '/public/js/config/app.js'), {
-                AppName: this.appname
-            }
-        ),
-        this.fs.copy(
-            this.templatePath('./angular_material'),
-            this.destinationPath(this.appname)
-        );
+                this.templatePath('./app.js'),
+                this.destinationPath(this.appname + '/public/js/config/app.js'), {
+                    AppName: this.appname
+                }
+            ),
+            this.fs.copy(
+                this.templatePath('./angular_material'),
+                this.destinationPath(this.appname)
+            );
     },
 
     install: function() {
