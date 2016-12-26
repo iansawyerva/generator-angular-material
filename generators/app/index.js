@@ -6,26 +6,39 @@ var util = require('util');
 
 var AngularMaterial = yeoman.extend({
 
-    prompting: function() {
+    prompting: function(args) {
         // Have Yeoman greet the user.
-        this.log(yosay(
-            'Welcome to ' + chalk.red('Angular Material')
-        ));
-
-        return this.prompt([{
-            type: 'input',
-            name: 'name',
-            message: 'What would you like to name your app? Default: ' + this.appname,
-            default: this.appname
-        }]).then((answers) => {
-            if (this.appname != answers.name) {
-                this.appname = answers.name
-            }
-            this.log('Selected app name: ', answers.name);
-        });
+        if (this.args) {
+            this.appname = args.replace(/ /g, ' ');
+            this.log(yosay(
+                chalk.red('Creating ' + this.appname)
+            ));
+        } else {
+            this.log(yosay(
+                'Welcome to ' + chalk.red('Angular Material')
+            ));
+            return this.prompt([{
+                type: 'input',
+                name: 'name',
+                message: 'What would you like to name your app? Default: ' + this.appname,
+                default: this.appname
+            }]).then((answers) => {
+                if (this.appname != answers.name) {
+                    this.appname = answers.name.replace(/ /g, ' ');
+                }
+                this.appname = this.appname.replace(/ /g, ' ');
+                this.log('Selected app name: ', this.appname);
+            });
+        }
     },
 
     writing: function() {
+        this.fs.copyTpl(
+            this.templatePath('./app.js'),
+            this.destinationPath(this.appname + '/public/js/config/app.js'), {
+                AppName: this.appname
+            }
+        ),
         this.fs.copy(
             this.templatePath('./angular_material'),
             this.destinationPath(this.appname)

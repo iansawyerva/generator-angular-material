@@ -1,6 +1,6 @@
-var AngularMaterialExample = angular.module('AngularMaterialExample', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
+var <%= AppName %> = angular.module('AngularMaterialExample', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
 
-AngularMaterialExample.config(function($stateProvider, $urlRouterProvider) {
+<%= AppName %>.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
