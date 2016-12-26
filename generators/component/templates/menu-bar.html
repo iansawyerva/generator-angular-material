@@ -1,0 +1,55 @@
+<md-menu-bar>
+    <md-menu>
+        <button ng-click="$mdOpenMenu()">
+            File
+        </button>
+        <md-menu-content>
+            <md-menu-item>
+                <md-button ng-click="">
+                    Share...
+                </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-menu>
+                    <md-button ng-click="$mdOpenMenu()">New</md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button ng-click="">Document</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="">Spreadsheet</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="">Presentation</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="">Form</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="">Drawing</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="">
+                    Open...
+                    <span class="md-alt-text"></span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button disabled="disabled" ng-click="">
+                    Rename
+                </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button ng-click="ctrl.sampleAction('Print', $event)">
+                    Print
+                    <span class="md-alt-text"></span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-menu-bar>

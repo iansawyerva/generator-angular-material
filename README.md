@@ -89,6 +89,7 @@ Component list - must use exact name
 - grid-list
 - list
 - menu
+- menu-bar
 - nav-bar
 - select
 - sidenav
