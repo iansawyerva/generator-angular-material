@@ -1,2 +1,2 @@
-<%= AppName %>.controller('HomeController', ['$scope', function($scope, $rootScope){
+<%= AppName %>.controller('HomeController', ['$scope', function($scope){
 }]);
