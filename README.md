@@ -100,6 +100,11 @@ Component list - must use exact name
 Refer to https://material.angularjs.org/latest/ for how to use these components
 
 
+All JavaScript/CSS dependencies will be automatically injected into your dev/dist index.html in proper order when running the browsersync server.
+
+All bower components come first. Use bower when installing any new modules and you won't have any issues. Just be sure to inject them in your app module!
+
+
 ## License
 
 MIT © [Google](https://github.com/iansawyerva)
