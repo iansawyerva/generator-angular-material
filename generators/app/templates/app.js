@@ -1,4 +1,4 @@
-var <%= AppName %> = angular.module('AngularMaterialExample', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
+var <%= AppName %> = angular.module('<%= AppName %>', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
 
 <%= AppName %>.config(function($stateProvider, $urlRouterProvider) {
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= AppName %></title>
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+
+<body ng-app="<%= AppName %>" ng-cloak>
+    <h1 class="md-display-1 text-center"><%= AppName %></h1>
+    <md-content class="md-padding" layout="row" layout-align="center">
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="home" name="home">Home</md-nav-item>
+            <md-nav-item md-nav-sref="about" name="about">About</md-nav-item>
+        </md-nav-bar>
+    </md-content>
+    <div ui-view></div>
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+
+</html>

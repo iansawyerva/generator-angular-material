@@ -50,6 +50,18 @@ var AngularMaterial = yeoman.extend({
                     AppName: this.appname
                 }
             ),
+        this.fs.copyTpl(
+                this.templatePath('./index.html'),
+                this.destinationPath(this.appname + '/dev/index.html'), {
+                    AppName: this.appname
+                }
+            ),
+        this.fs.copyTpl(
+                this.templatePath('./index.html'),
+                this.destinationPath(this.appname + '/dist/index.html'), {
+                    AppName: this.appname
+                }
+            ),
             this.fs.copy(
                 this.templatePath('./angular_material'),
                 this.destinationPath(this.appname)
