@@ -9,9 +9,9 @@ var factory = yeoman.extend({
     writing: function(args) {
         this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
         if (!args) {
-            this.factoryName = this.appname.replace(/ /g, ' ');
+            this.factoryName = this.appname.replace(/ /g, '');
         } else {
-            this.factoryName = args.replace(/ /g, ' ');
+            this.factoryName = args.replace(/ /g, '');
         }
         this.fs.copyTpl(
             this.templatePath('./factory.js'),

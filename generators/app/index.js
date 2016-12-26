@@ -8,7 +8,7 @@ var AngularMaterial = yeoman.extend({
 
     prompting: function(args) {
         try {
-            this.appname = args.replace(/ /g, ' ');
+            this.appname = args.replace(/ /g, '');
             this.log(yosay(
                 chalk.red('Creating ' + this.appname)
             ));
@@ -23,9 +23,9 @@ var AngularMaterial = yeoman.extend({
                 default: this.appname
             }]).then((answers) => {
                 if (this.appname != answers.name) {
-                    this.appname = answers.name.replace(/ /g, ' ');
+                    this.appname = answers.name.replace(/ /g, '');
                 }
-                this.appname = this.appname.replace(/ /g, ' ');
+                this.appname = this.appname.replace(/ /g, '');
                 this.log('Creating ', this.appname);
             });
         }

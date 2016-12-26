@@ -1,24 +1,28 @@
-<md-menu>
-    <md-button aria-label="button" class="md-icon-button" ng-click="">
-        <md-icon md-menu-origin md-svg-icon=""></md-icon>
-    </md-button>
-    <md-menu-content width="4">
-        <md-menu-item>
-            <md-button aria-label="button" ng-click="">
-                <md-icon md-svg-icon="" md-menu-align-target></md-icon>
-                Redial
+<div class="md-menu-demo" ng-controller="<%= ControllerName %> as ctrl" ng-cloak>
+    <div class="menu-demo-container" layout-align="center center" layout="column">
+        <h2 class="md-title">Simple dropdown menu</h2>
+        <md-menu>
+            <md-button aria-label="Open phone interactions menu" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                Open
             </md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button disabled="disabled" aria-label="button" ng-click="">
-                <md-icon md-svg-icon=""></md-icon>
-            </md-button>
-        </md-menu-item>
-        <md-menu-divider></md-menu-divider>
-        <md-menu-item>
-            <md-button aria-label="button" ng-click="">
-                <md-icon md-svg-icon=""></md-icon>
-            </md-button>
-        </md-menu-item>
-    </md-menu-content>
-</md-menu>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="ctrl.redial($event)">
+                        Redial
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+                        Check voicemail
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.toggleNotifications()">
+                        {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</div>

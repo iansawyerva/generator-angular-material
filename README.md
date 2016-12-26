@@ -1,4 +1,4 @@
-# generator-angular-material [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
 > Google&#39;s Angular Material - in progress
 
 ## Installation
@@ -77,6 +77,8 @@ yo angular-material:component componentName path/to/partial
 
 For this to work, each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
 
+Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory
+
 Component list - must use exact name
 - autocomplete
 - card
@@ -84,10 +86,9 @@ Component list - must use exact name
 - chips
 - content
 - datepicker
+- dialog
 - fab-speed-dial
 - fab-toolbar
-- grid-list
-- list
 - menu
 - menu-bar
 - nav-bar
@@ -95,7 +96,6 @@ Component list - must use exact name
 - sidenav
 - slider
 - tabs
-- toolbar
 
 
 Refer to https://material.angularjs.org/latest/ for how to use these components

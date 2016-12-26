@@ -1,18 +1,52 @@
-<md-fab-speed-dial md-open="false" md-direction="up" ng-class="md-fling">
-    <md-fab-trigger>
-        <md-button aria-label="menu" class="md-fab md-warn">
-            <md-icon md-svg-src=""></md-icon>
-        </md-button>
-    </md-fab-trigger>
-    <md-fab-actions>
-        <md-button aria-label="button" class="md-fab md-raised md-mini">
-            <md-icon md-svg-src="" aria-label=""></md-icon>
-        </md-button>
-        <md-button aria-label="button" class="md-fab md-raised md-mini">
-            <md-icon md-svg-src="" aria-label=""></md-icon>
-        </md-button>
-        <md-button aria-label="button" class="md-fab md-raised md-mini">
-            <md-icon md-svg-src="" aria-label="out"></md-icon>
-        </md-button>
-    </md-fab-actions>
-</md-fab-speed-dial>
+<div ng-controller="<%= ControllerName %> as ctrl" layout="column" ng-cloak>
+    <md-content class="md-padding" layout="column">
+        <p>
+            You may supply a direction of <code>left</code>, <code>up</code>, <code>down</code>, or
+            <code>right</code> through the <code>md-direction</code> attribute.
+        </p>
+        <div class="lock-size" layout="row" layout-align="center center">
+            <md-fab-speed-dial md-open="ctrl.isOpen" md-direction="{{ctrl.selectedDirection}}" ng-class="ctrl.selectedMode">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-fab md-warn">
+                        <md-icon md-svg-src=""></md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                        <md-icon md-svg-src=""></md-icon>
+                    </md-button>
+                    <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                        <md-icon md-svg-src=""></md-icon>
+                    </md-button>
+                    <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                        <md-icon md-svg-src="" aria-label="Google Hangout"></md-icon>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </div>
+        <div layout="row" layout-align="space-around">
+            <div layout="column" layout-align="start center">
+                <b>Direction</b>
+                <md-radio-group ng-model="ctrl.selectedDirection">
+                    <md-radio-button ng-repeat="direction in ctrl.availableDirections" ng-value="direction" class="text-capitalize">
+                        {{direction}}
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+            <div layout="column" layout-align="start center">
+                <b>Open/Closed</b>
+                <md-checkbox ng-model="ctrl.isOpen">
+                    Open
+                </md-checkbox>
+            </div>
+            <div layout="column" layout-align="start center">
+                <b>Animation Modes</b>
+                <md-radio-group ng-model="ctrl.selectedMode">
+                    <md-radio-button ng-repeat="mode in ctrl.availableModes" ng-value="mode">
+                        {{mode}}
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+        </div>
+    </md-content>
+</div>

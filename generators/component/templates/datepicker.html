@@ -1,10 +1,10 @@
-<md-input-container>
-    <label>Enter date</label>
-    <md-datepicker ng-model="datepicker" name="" md-min-date="" md-max-date=""></md-datepicker>
-    <div ng-messages="">
-        <div ng-message="valid">The entered value is not a date!</div>
-        <div ng-message="required">This date is required!</div>
-        <div ng-message="mindate">Date is too early!</div>
-        <div ng-message="maxdate">Date is too late!</div>
-    </div>
-</md-input-container>
+<div ng-controller="<%= ControllerName %>" ng-cloak>
+    <md-content layout-padding>
+        <div layout-gt-xs="row">
+            <div flex-gt-xs>
+                <h4>Standard date-picker</h4>
+                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            </div>
+        </div>
+    </md-content>
+</div>

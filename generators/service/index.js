@@ -9,9 +9,9 @@ var service = yeoman.extend({
     writing: function(args) {
         this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
         if (!args) {
-            this.serviceName = this.appname.replace(/ /g, ' ');
+            this.serviceName = this.appname.replace(/ /g, '');
         } else {
-            this.serviceName = args.replace(/ /g, ' ');
+            this.serviceName = args.replace(/ /g, '');
         }
         this.fs.copyTpl(
             this.templatePath('./service.js'),
