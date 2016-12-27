@@ -1,6 +1,6 @@
-<%= AppName %>.config(function ($provide) {
-    $provide.decorator('<%= DecoratorName %>', function ($delegate) {
+<%= AppName %>.config(['$provide', function ($provide) {
+    $provide.decorator('<%= DecoratorName %>', ['$delegate', function ($delegate) {
       // ...
       return $delegate;
-    });
-  });
+    }]);
+  }]);
