@@ -97,7 +97,7 @@ yo angular-material:route routename
 
 This will create ```public/js/controllers/routename-controller.js``` and ```public/partials/routename-partial.html``` files.
 
-You might new to restart the server for these changes to reflect
+You might need to restart the server for these changes to reflect.
 
 Result:
 
