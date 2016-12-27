@@ -9,7 +9,7 @@ var imagemin = require('gulp-imagemin');
 gulp.task('default', ['serve']);
 
 // Static Server + watching js/scss/html files
-gulp.task('serve', ['sass', 'bower', 'js', 'html'], function() {
+gulp.task('serve', ['sass', 'bower', 'js', 'html', 'index'], function() {
 
     browserSync.init({
         server: {
