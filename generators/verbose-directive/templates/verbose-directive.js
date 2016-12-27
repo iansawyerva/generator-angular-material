@@ -1,4 +1,4 @@
-<%= AppName %>.directive(<%= DirectiveName %>, ['', function(){
+<%= AppName %>.directive('<%= DirectiveName %>', ['', function(){
 	return {
 		scope: {},
 		controller: function($scope, $element, $attrs, $transclude) {},

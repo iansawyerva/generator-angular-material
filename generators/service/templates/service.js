@@ -1,3 +1,3 @@
-<%= AppName %>.service(<%= ServiceName %>, ['', function(){
+<%= AppName %>.service('<%= ServiceName %>', ['', function(){
 	
 }]);

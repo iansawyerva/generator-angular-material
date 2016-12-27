@@ -1,4 +1,4 @@
-<%= AppName %>.directive(<%= DirectiveName %>, ['', function(){
+<%= AppName %>.directive('<%= DirectiveName %>', ['', function(){
 	return {
 		link: function($scope, elem, attrs, controller) {
 			
