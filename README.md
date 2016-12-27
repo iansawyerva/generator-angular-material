@@ -23,7 +23,7 @@ Run server
 gulp serve || sudo gulp serve
 ```
 
-Run dist server - before running this for the first time run ```gulp dist:package```
+Run dist server - before running this for the first time run  ```gulp dist:package```
 
 
 ```bash
