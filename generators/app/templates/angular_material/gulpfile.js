@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var inject = require('gulp-inject');
 var imagemin = require('gulp-imagemin');
+
 gulp.task('default', ['serve']);
 
 // Static Server + watching js/scss/html files
@@ -45,6 +46,7 @@ gulp.task('index', function() {
 gulp.task('html', function() {
     return gulp.src("./public/**/*.html")
         .pipe(gulp.dest("./dev"))
+        .pipe(gulp.dest("./dist"))
         .pipe(browserSync.stream());
 });
 
