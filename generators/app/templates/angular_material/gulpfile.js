@@ -110,7 +110,7 @@ gulp.task('index:dist', function() {
         .pipe(gulp.dest('./dist'))
 });
 
-gulp.task('serve:dist', ['sass', 'bower', 'uglify-js', 'image-min', 'html', 'index:dist'], function() {
+gulp.task('serve:dist', ['dist:package'], function() {
 
     browserSync.init({
         server: {
