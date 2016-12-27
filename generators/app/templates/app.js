@@ -1,19 +1,20 @@
 var <%= AppName %> = angular.module('<%= AppName %>', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
 
-<%= AppName %>.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+(function(app) {
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('home', {
-        url: '/',
-        templateUrl: 'partials/home-partial.html',
-        controller: 'HomeController'
-    })
+        $stateProvider.state('home', {
+            url: '/',
+            templateUrl: 'partials/home-partial.html',
+            controller: 'HomeController'
+        })
 
-    .state('about', {
-        url: '/about',
-        templateUrl: 'partials/about-partial.html',
-        controller: 'AboutController'
-    });
-
-}]);
+        .state('about', {
+            url: '/about',
+            templateUrl: 'partials/about-partial.html',
+            controller: 'AboutController'
+        });
+    }]);
+})(<%= AppName %>);
