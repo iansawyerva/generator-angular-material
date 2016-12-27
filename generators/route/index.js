@@ -34,7 +34,7 @@ var service = yeoman.extend({
             }
         );
         this.tmpappjs = this.fs.read(this.templatePath('./tmp/app.js'));
-        this.appjs = this.appjs.replace('{{route}}', this.tmpappjs);
+        this.appjs = this.appjs.replace('$stateProvider.state', '$stateProvider.state' + this.tmpappjs);
         this.fs.write('./public/js/config/app.js', this.appjs);
         this.fs.delete(this.templatePath('./tmp/app.js'));
     },

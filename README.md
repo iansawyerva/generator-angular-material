@@ -92,38 +92,11 @@ Refer to https://material.angularjs.org/latest/ for how to use these components.
 Generate a route:
 
 ```bash
-yo angular-material:route routename
+yo angular-material:route routename - You might new to restart the server for these changes to reflect
 ```
-
-Each time you inject a route you must specify {{route}} where you would like the place it in public/js/config/app.js.
 
 This will create ```public/js/controllers/routename-controller.js``` and ```public/partials/routename-partial.html``` files.
 
-Example:
-
-```
-var MyApp = angular.module('MyApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
-
-MyApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-
-    $urlRouterProvider.otherwise('/');
-
-    $stateProvider.state('home', {
-        url: '/',
-        templateUrl: 'partials/home-partial.html',
-        controller: 'HomeController'
-    })
-
-	{{route}}
-
-    .state('about', {
-        url: '/about',
-        templateUrl: 'partials/about-partial.html',
-        controller: 'AboutController'
-    });
-
-}]);
-```
 
 Generate a controller:
 
