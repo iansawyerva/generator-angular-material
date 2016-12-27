@@ -1,6 +1,6 @@
 var <%= AppName %> = angular.module('<%= AppName %>', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
 
-<%= AppName %>.config(function($stateProvider, $urlRouterProvider) {
+<%= AppName %>.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -16,4 +16,4 @@ var <%= AppName %> = angular.module('<%= AppName %>', ['ngMaterial', 'ngAnimate'
         controller: 'AboutController'
     });
 
-});
+}]);

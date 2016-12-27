@@ -20,7 +20,21 @@ Run server
 
 
 ```bash
-sudo gulp || gulp
+gulp || sudo gulp
+```
+
+Run dist server
+
+
+```bash
+gulp dist:serve || sudo gulp dist:serve
+```
+
+Create dist package
+
+
+```bash
+gulp dist:package || sudo gulp dist:package
 ```
 
 Generate a controller:
