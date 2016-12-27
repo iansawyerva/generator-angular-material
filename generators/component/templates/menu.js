@@ -1,7 +1,5 @@
 (function() {
-    <%= AppName %>.controller('<%= ControllerName %>', <%= ControllerName %>);
-
-    function <%= ControllerName %> ($mdDialog) {
+    <%= AppName %>.controller('<%= ControllerName %>', ['$mdDialog', function($mdDialog) {
         var originatorEv;
 
         this.openMenu = function($mdOpenMenu, ev) {
@@ -31,5 +29,5 @@
         this.checkVoicemail = function() {
             // This never happens.
         };
-    }
+    }]);
 })();

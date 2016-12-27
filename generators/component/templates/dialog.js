@@ -1,7 +1,5 @@
 (function() {
-    <%= AppName %>.controller('<%= ControllerName %>', <%= ControllerName %>);
-
-    function <%= ControllerName %> ($scope, $mdDialog) {
+    <%= AppName %>.controller('<%= ControllerName %>', ['$scope', '$mdDialog', function($scope, $mdDialog) {
         $scope.openFromLeft = function() {
             $mdDialog.show(
                 $mdDialog.alert()
@@ -36,5 +34,5 @@
                 })
             );
         };
-    }
+    }]);
 })();

@@ -1,7 +1,5 @@
 (function() {
-    <%= AppName %>.controller('<%= ControllerName %>', <%= ControllerName %>);
-
-    function <%= ControllerName %> ($scope) {
+    <%= AppName %>.controller('<%= ControllerName %>', ['$scope', function($scope) {
         $scope.isOpen = false;
 
         $scope.demo = {
@@ -9,5 +7,5 @@
             count: 0,
             selectedDirection: 'left'
         };
-    }
+    }]);
 })();

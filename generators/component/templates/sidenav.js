@@ -1,7 +1,5 @@
 (function() {
-    <%= AppName %>.controller('<%= ControllerName %>', <%= ControllerName %>);
-
-    function <%= ControllerName %> ($scope, $timeout, $mdSidenav) {
+    <%= AppName %>.controller('<%= ControllerName %>', ['$scope', '$timeout', '$mdSidenav', function($scope, $timeout, $mdSidenav) {
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
 
@@ -10,5 +8,5 @@
                 $mdSidenav(componentId).toggle();
             }
         }
-    }
+    }]);
 })();
