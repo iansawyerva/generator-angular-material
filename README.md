@@ -20,7 +20,7 @@ Run server
 
 
 ```bash
-gulp || sudo gulp
+gulp serve || sudo gulp serve
 ```
 
 Run dist server
