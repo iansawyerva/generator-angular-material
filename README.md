@@ -70,6 +70,24 @@ Example:
 {{component}}
 ```
 
+Component list - must use exact name
+- autocomplete
+- card
+- checkbox
+- chips
+- content
+- dialog
+- fab-speed-dial
+- fab-toolbar
+- menu
+- menu-bar
+- nav-bar
+- select
+- sidenav
+- slider
+- tabs
+
+
 Generate a route:
 
 ```bash
