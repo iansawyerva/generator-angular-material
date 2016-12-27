@@ -92,10 +92,12 @@ Refer to https://material.angularjs.org/latest/ for how to use these components.
 Generate a route:
 
 ```bash
-yo angular-material:route routename - You might new to restart the server for these changes to reflect
+yo angular-material:route routename
 ```
 
 This will create ```public/js/controllers/routename-controller.js``` and ```public/partials/routename-partial.html``` files.
+
+You might new to restart the server for these changes to reflect
 
 
 Generate a controller:
