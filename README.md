@@ -70,7 +70,7 @@ Example:
 {{component}}
 ```
 
-Component list - must use exact name
+Component list
 - autocomplete
 - card
 - checkbox
