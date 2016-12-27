@@ -1,5 +1,5 @@
-(function() {
-    <%= AppName %>.controller('<%= ControllerName %>', ['$mdConstant', function($mdConstant) {
+(function(app) {
+    app.controller('<%= ControllerName %>', ['$mdConstant', function($mdConstant) {
         // Use common key codes found in $mdConstant.KEY_CODE...
         this.keys = [$mdConstant.KEY_CODE.ENTER, $mdConstant.KEY_CODE.COMMA];
         this.tags = [];
@@ -9,4 +9,4 @@
         this.customKeys = [$mdConstant.KEY_CODE.ENTER, $mdConstant.KEY_CODE.COMMA, semicolon];
         this.contacts = ['test@example.com'];
     }]);
-})();
+})(<%= AppName %>);

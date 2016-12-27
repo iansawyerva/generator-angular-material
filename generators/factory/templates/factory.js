@@ -1,3 +1,5 @@
-<%= AppName %>.factory('<%= FactoryName %>', ['', function(){
-	return {};
-}]);
+(function(app) {
+	app.factory('<%= FactoryName %>', ['', function() {
+		return {};
+	}]);
+})(<%= AppName %>);

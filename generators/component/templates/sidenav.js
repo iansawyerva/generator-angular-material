@@ -1,5 +1,5 @@
-(function() {
-    <%= AppName %>.controller('<%= ControllerName %>', ['$scope', '$timeout', '$mdSidenav', function($scope, $timeout, $mdSidenav) {
+(function(app) {
+    app.controller('<%= ControllerName %>', ['$scope', '$timeout', '$mdSidenav', function($scope, $timeout, $mdSidenav) {
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
 
@@ -9,4 +9,4 @@
             }
         }
     }]);
-})();
+})(<%= AppName %>);

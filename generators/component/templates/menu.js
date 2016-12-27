@@ -1,5 +1,5 @@
-(function() {
-    <%= AppName %>.controller('<%= ControllerName %>', ['$mdDialog', function($mdDialog) {
+(function(app) {
+    app.controller('<%= ControllerName %>', ['$mdDialog', function($mdDialog) {
         var originatorEv;
 
         this.openMenu = function($mdOpenMenu, ev) {
@@ -30,4 +30,4 @@
             // This never happens.
         };
     }]);
-})();
+})(<%= AppName %>);

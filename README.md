@@ -268,7 +268,7 @@ All JavaScript/CSS dependencies will be automatically injected into your dev/dis
 
 All bower components come first. Use bower when installing any new modules and you won't have any issues. Just be sure to inject them in your app module!
 
-Besides for editing the main "index.html" file in the "dev" directory, all edits should be contained within the "public", "scss", and "spec" directories.
+Besides for editing the main "index.html" file in the "dev" directory, most edits should be contained within the "public", "scss", and "spec" directories.
 
 @TODO 
 

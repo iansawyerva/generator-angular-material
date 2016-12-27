@@ -1,2 +1,3 @@
-<%= AppName %>.controller('AboutController', ['$scope', function($scope){
-}]);
+(function(app) {
+	app.controller('AboutController', ['$scope', function($scope) {}]);
+})(<%= AppName %>);

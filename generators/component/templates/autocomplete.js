@@ -1,5 +1,5 @@
-(function() {
-    <%= AppName %>.controller('<%= ControllerName %>', ['$timeout', '$q', '$log', function($timeout, $q, $log) {
+(function(app) {
+    app.controller('<%= ControllerName %>', ['$timeout', '$q', '$log', function($timeout, $q, $log) {
         var self = this;
 
         self.simulateQuery = false;
@@ -77,4 +77,4 @@
 
         }
     }]);
-})();
+})(<%= AppName %>);

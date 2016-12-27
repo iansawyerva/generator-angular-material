@@ -1,5 +1,5 @@
-(function() {
-    <%= AppName %>.controller('<%= ControllerName %>', ['$scope', function($scope) {
+(function(app) {
+    app.controller('<%= ControllerName %>', ['$scope', function($scope) {
         this.topDirections = ['left', 'up'];
         this.bottomDirections = ['down', 'right'];
 
@@ -11,4 +11,4 @@
         this.availableDirections = ['up', 'down', 'left', 'right'];
         this.selectedDirection = 'up';
     }]);
-})();
+})(<%= AppName %>);

@@ -1,5 +1,5 @@
-(function() {
-    <%= AppName %>.controller('<%= ControllerName %>', ['$timeout', '$scope', function($timeout, $scope) {
+(function(app) {
+    app.controller('<%= ControllerName %>', ['$timeout', '$scope', function($timeout, $scope) {
         $scope.user = null;
         $scope.users = null;
 
@@ -19,4 +19,4 @@
             }, 650);
         };
     }]);
-})();
+})(<%= AppName %>);
