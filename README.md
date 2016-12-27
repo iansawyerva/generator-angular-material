@@ -16,42 +16,42 @@ Then generate your new project:
 yo angular-material appName
 ```
 
-Run server
+## Run server
 
 
 ```bash
 gulp serve
 ```
 
-Run dist server
+## Run dist server
 
 
 ```bash
 gulp serve:dist
 ```
 
-Run test server
+## Run test server
 
 
 ```bash
 gulp serve:spec
 ```
 
-Run tests
+## Run tests
 
 
 ```bash
 gulp spec
 ```
 
-Create dist package
+## Create dist package
 
 
 ```bash
 gulp dist:package
 ```
 
-Generate a component:
+## Generate a component:
 
 ```bash
 yo angular-material:component
@@ -89,7 +89,7 @@ Component list
 
 Refer to https://material.angularjs.org/latest/ for how to use these components.
 
-Generate a route:
+## Generate a route:
 
 ```bash
 yo angular-material:route routename
@@ -148,7 +148,7 @@ appName.controller('routenameController', ['$scope', function($scope){
 ```
 
 
-Generate a controller:
+## Generate a controller:
 
 ```bash
 yo angular-material:controller controllerName
@@ -166,7 +166,7 @@ appName.controller('controllerNameController', ['$scope', function($scope){
 ```
 
 
-Generate a directive:
+## Generate a directive:
 
 ```bash
 yo angular-material:directive directiveName
@@ -187,7 +187,7 @@ appName.directive('directiveNameDirective', ['', function(){
 }]);
 ```
 
-Generate a verbose directive:
+## Generate a verbose directive:
 
 ```bash
 yo angular-material:verbose-directive directiveName
@@ -215,7 +215,7 @@ appName.directive('directiveNameDirective', ['', function(){
 }]);
 ```
 
-Generate a factory:
+## Generate a factory:
 
 ```bash
 yo angular-material:factory factoryName
@@ -231,7 +231,7 @@ appName.factory('factoryNameFactory', ['', function(){
 }]);
 ```
 
-Generate a service:
+## Generate a service:
 
 ```bash
 yo angular-material:service serviceName 
@@ -246,7 +246,7 @@ appName.service('serviceNameService', ['', function(){
 }]);
 ```
 
-Generate a filter:
+## Generate a filter:
 
 ```bash
 yo angular-material:filter filterName
