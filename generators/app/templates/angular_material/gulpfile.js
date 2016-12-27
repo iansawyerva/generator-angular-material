@@ -78,7 +78,7 @@ gulp.task('sass-watch', ['sass', 'index'], function(done) {
     done();
 });
 
-gulp.task('js-watch', ['js', 'uglify-js', 'index', 'index:dist'], function(done) {
+gulp.task('js-watch', ['js', 'uglify-js', 'index'], function(done) {
     browserSync.reload();
     done();
 });
