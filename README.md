@@ -20,35 +20,35 @@ Run server
 
 
 ```bash
-gulp serve || sudo gulp serve
+gulp serve
 ```
 
 Run dist server
 
 
 ```bash
-gulp serve:dist || sudo gulp serve:dist
+gulp serve:dist
 ```
 
 Run test server
 
 
 ```bash
-gulp serve:spec || sudo gulp serve:spec
+gulp serve:spec
 ```
 
 Run tests
 
 
 ```bash
-gulp spec || sudo gulp spec
+gulp spec
 ```
 
 Create dist package
 
 
 ```bash
-gulp dist:package || sudo gulp dist:package
+gulp dist:package
 ```
 
 Generate a controller:
