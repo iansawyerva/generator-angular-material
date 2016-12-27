@@ -87,6 +87,7 @@ Component list
 - slider
 - tabs
 
+Refer to https://material.angularjs.org/latest/ for how to use these components.
 
 Generate a route:
 
@@ -167,7 +168,13 @@ yo angular-material:service serviceName
 
 Adds extension -service.js to filename and Service to serviceName
 
-Refer to https://material.angularjs.org/latest/ for how to use these components.
+Generate a decorator:
+
+```bash
+yo angular-material:decorator decoratorName
+```
+
+Adds extension -decorator.js to filename and Decorator to decoratorName
 
 
 All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
