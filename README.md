@@ -168,13 +168,13 @@ yo angular-material:service serviceName
 
 Adds extension -service.js to filename and Service to serviceName
 
-Generate a decorator:
+Generate a filter:
 
 ```bash
-yo angular-material:decorator decoratorName
+yo angular-material:filter filterName
 ```
 
-Adds extension -decorator.js to filename and Decorator to decoratorName
+Adds extension -filter.js to filename and Filter to filterName
 
 
 All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
