@@ -6,7 +6,7 @@
 First, install [Yeoman](http://yeoman.io) and generator-angular-material using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
+npm install -g yo gulp karma
 npm install -g generator-angular-material
 ```
 
@@ -23,11 +23,25 @@ Run server
 gulp serve || sudo gulp serve
 ```
 
-Run dist server - before running this for the first time run  ```gulp dist:package```
+Run dist server
 
 
 ```bash
-gulp dist:serve || sudo gulp dist:serve
+gulp serve:dist || sudo gulp serve:dist
+```
+
+Run test server
+
+
+```bash
+gulp serve:spec || sudo gulp serve:spec
+```
+
+Run tests
+
+
+```bash
+gulp spec || sudo gulp spec
 ```
 
 Create dist package
@@ -110,7 +124,6 @@ Component list - must use exact name
 Refer to https://material.angularjs.org/latest/ for how to use these components.
 
 
-
 All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
 
 All bower components come first. Use bower when installing any new modules and you won't have any issues. Just be sure to inject them in your app module!
@@ -118,8 +131,6 @@ All bower components come first. Use bower when installing any new modules and y
 Besides for editing the main "index.html" file in the "dev" directory, all edits should be contained within the "public", "scss", and "spec" directories.
 
 @TODO 
-
-	- karma setup
 
 	- Update to count for Windows directories
 

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/iansawyerva/generator-angular-material#readme",
   "devDependencies": {
+    "angular-mocks": "^1.6.1",
     "browser-sync": "^2.18.5",
     "browserify": "^13.1.1",
     "gulp": "^3.9.1",
@@ -31,6 +32,11 @@
     "gulp-inject": "^4.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "jasmine": "^2.4.1",
+    "karma": "1.x || ^0.13.0",
+    "karma-jasmine": "1.x || ^0.3.6",
+    "karma-phantomjs-launcher": "1.x || ^0.2.0"
   }
 }
