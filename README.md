@@ -54,13 +54,14 @@ gulp dist:package
 Generate a component:
 
 ```bash
-yo angular-material:component componentName path/to/partial 
+yo angular-material:component
 ```
+
+This will give you prompts for which partials you would like to inject into and what component you would like to inject.
 
 Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
 
 Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
-
 
 Example:
 
@@ -68,23 +69,6 @@ Example:
 <div class="text-center md-padding">Home Page</div>
 {{component}}
 ```
-
-Component list - must use exact name
-- autocomplete
-- card
-- checkbox
-- chips
-- content
-- dialog
-- fab-speed-dial
-- fab-toolbar
-- menu
-- menu-bar
-- nav-bar
-- select
-- sidenav
-- slider
-- tabs
 
 Generate a route:
 
