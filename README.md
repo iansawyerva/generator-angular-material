@@ -99,6 +99,54 @@ This will create ```public/js/controllers/routename-controller.js``` and ```publ
 
 You might new to restart the server for these changes to reflect
 
+Result:
+
+- public/js/config/app.js
+
+``` 
+var appName = angular.module('appName', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
+
+appName.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider.state('routename', {
+        url: '/routename',
+        templateUrl: 'partials/routename-partial.html',
+        controller: 'routenameController'
+    })
+
+    .state('home', {
+        url: '/',
+        templateUrl: 'partials/home-partial.html',
+        controller: 'HomeController'
+    })
+
+    .state('about', {
+        url: '/about',
+        templateUrl: 'partials/about-partial.html',
+        controller: 'AboutController'
+    });
+
+}]);
+```
+
+- public/js/controllers/routename-controller.js
+
+```
+appName.controller('routenameController', ['$scope', function($scope){
+
+}]);
+```
+
+- public/partials/routename-partial.html
+
+```
+<div ng-controller="routenameController">
+    routename view
+</div>
+```
+
 
 Generate a controller:
 
@@ -107,6 +155,16 @@ yo angular-material:controller controllerName
 ```
 
 Adds extension -controller.js to filename and Controller to controllerName
+
+
+Result: public/js/controllers/controllerName-controller.js
+
+```
+appName.controller('controllerNameController', ['$scope', function($scope){
+    
+}]);
+```
+
 
 Generate a directive:
 
@@ -117,6 +175,18 @@ yo angular-material:directive directiveName
 Adds extension -directive.js to filename and Directive to directiveName
 
 
+Result: public/js/directives/directiveName-directive.js
+
+```
+appName.directive('directiveNameDirective', ['', function(){
+    return {
+        link: function($scope, elem, attrs, controller) {
+            
+        }
+    };
+}]);
+```
+
 Generate a verbose directive:
 
 ```bash
@@ -126,6 +196,25 @@ yo angular-material:verbose-directive directiveName
 Adds extension -directive.js to filename and Directive to directiveName
 
 
+Result: public/js/directives/directiveName-directive.js
+
+```
+appName.directive('directiveNameDirective', ['', function(){
+    return {
+        scope: {},
+        controller: function($scope, $element, $attrs, $transclude) {},
+        // require: 'ngModel',
+        // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+        // template: '',
+        // templateUrl: '',
+        // replace: true,
+        // transclude: true,
+        link: function($scope, elem, attrs, controller) {
+        }
+    };
+}]);
+```
+
 Generate a factory:
 
 ```bash
@@ -134,6 +223,13 @@ yo angular-material:factory factoryName
 
 Adds extension -factory.js to filename and Factory to factoryName
 
+Result: public/js/factories/factoryName-factory.js
+
+```
+appName.factory('factoryNameFactory', ['', function(){
+    return {};
+}]);
+```
 
 Generate a service:
 
@@ -143,6 +239,13 @@ yo angular-material:service serviceName
 
 Adds extension -service.js to filename and Service to serviceName
 
+Result: public/js/services/serviceName-service.js
+```
+appName.service('serviceNameService', ['', function(){
+    
+}]);
+```
+
 Generate a filter:
 
 ```bash
@@ -150,6 +253,15 @@ yo angular-material:filter filterName
 ```
 
 Adds extension -filter.js to filename and Filter to filterName
+
+Result: public/js/filters/filterName-filter.js
+```
+appName.filter('filterNameFilter', function() {
+    return function(input) {
+        return 'filterNameFilter filter:' + input;
+    };
+});
+```
 
 
 All JavaScript/CSS dependencies will be automatically injected into your dev/dist "index.html" in proper order when running the browsersync server.
