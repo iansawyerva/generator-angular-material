@@ -51,6 +51,77 @@ Create dist package
 gulp dist:package
 ```
 
+Generate a component:
+
+```bash
+yo angular-material:component componentName path/to/partial 
+```
+
+Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
+
+Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
+
+
+Example:
+
+```
+<div class="text-center md-padding">Home Page</div>
+{{component}}
+```
+
+Component list - must use exact name
+- autocomplete
+- card
+- checkbox
+- chips
+- content
+- dialog
+- fab-speed-dial
+- fab-toolbar
+- menu
+- menu-bar
+- nav-bar
+- select
+- sidenav
+- slider
+- tabs
+
+Generate a route:
+
+```bash
+yo angular-material:route routename
+```
+
+Each time you inject a route you must specify {{route}} where you would like the place it in public/js/config/app.js.
+
+This will create ```public/js/controllers/routename-controller.js``` and ```public/partials/routename-partial.html``` files.
+
+Example:
+
+```
+var MyApp = angular.module('MyApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
+
+MyApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider.state('home', {
+        url: '/',
+        templateUrl: 'partials/home-partial.html',
+        controller: 'HomeController'
+    })
+
+	{{route}}
+
+    .state('about', {
+        url: '/about',
+        templateUrl: 'partials/about-partial.html',
+        controller: 'AboutController'
+    });
+
+}]);
+```
+
 Generate a controller:
 
 ```bash
@@ -93,33 +164,6 @@ yo angular-material:service serviceName
 ```
 
 Adds extension -service.js to filename and Service to serviceName
-
-Generate a component:
-
-```bash
-yo angular-material:component componentName path/to/partial 
-```
-
-Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
-
-Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
-
-Component list - must use exact name
-- autocomplete
-- card
-- checkbox
-- chips
-- content
-- dialog
-- fab-speed-dial
-- fab-toolbar
-- menu
-- menu-bar
-- nav-bar
-- select
-- sidenav
-- slider
-- tabs
 
 Refer to https://material.angularjs.org/latest/ for how to use these components.
 
