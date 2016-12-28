@@ -30,6 +30,8 @@ gulp serve
 gulp serve:dist
 ```
 
+- dist gulp tasks make all app specific JavaScript anonymous
+
 ## Run test server
 
 
