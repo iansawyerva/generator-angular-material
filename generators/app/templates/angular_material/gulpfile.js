@@ -124,7 +124,7 @@ gulp.task('uglify-js', function() {
 
 gulp.task('index:dist', function() {
     var target = gulp.src('./dist/index.html');
-    var sources = gulp.src(['./bower_components/**/*.js', './public/js/min/all.min.js', './bower_components/**/*.css', './public/css/**/*.css'], { read: false });
+    var sources = gulp.src(['./bower_components/**/*.js', './public/js/min/anonymous.min.js', './bower_components/**/*.css', './public/css/**/*.css'], { read: false });
 
     return target.pipe(inject(sources))
         .pipe(gulp.dest('./dist'))
@@ -133,8 +133,9 @@ gulp.task('index:dist', function() {
 gulp.task('dist:iife', function() {
     return gulp.src('./public/js/min/all.min.js')
         .pipe(iife())
-        .pipe(rename('./public/js/min/anonymous.min.js'))
-        .pipe(gulp.dest('./dist'));
+        .pipe(rename('./js/min/anonymous.min.js'))
+        .pipe(gulp.dest('./public'))
+        .pipe(gulp.dest('./dist/public'));
 });
 
 gulp.task('serve:dist', ['dist:package'], function() {
