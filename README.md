@@ -35,7 +35,6 @@ gulp serve:dist
 - compresses js / css / images
 - all JavaScript is generated anonymous
 
-Note: restart the dist server on any file creation
 
 ## Run test server
 
