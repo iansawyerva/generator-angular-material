@@ -1,3 +1,5 @@
 (function(app) {
-	app.controller('<%= ControllerName %>', ['$scope', function($scope) {}]);
+	app.controller('<%= ControllerName %>', ['$scope', function($scope) {
+
+	}]);
 })(<%= AppName %>);

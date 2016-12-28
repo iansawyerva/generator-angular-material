@@ -140,7 +140,9 @@ var appName = angular.module('appName', ['ngMaterial', 'ngAnimate', 'ngMessages'
 
 ```
 (function(app) {
-    app.controller('routenameController', ['$scope', function($scope) {}]);
+    app.controller('routenameController', ['$scope', function($scope) {
+    
+    }]);
 })(appName);
 ```
 
