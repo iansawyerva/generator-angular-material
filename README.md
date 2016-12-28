@@ -23,7 +23,7 @@ yo angular-material appName
 gulp serve
 ```
 
-## Run dist server
+## Run dist server - wraps compressed scripts in anonymous function during watch
 
 
 ```bash
@@ -44,7 +44,7 @@ gulp serve:spec
 gulp spec
 ```
 
-## Create dist package
+## Create dist package - wraps compressed scripts in anonymous function
 
 
 ```bash
@@ -92,7 +92,7 @@ Refer to https://material.angularjs.org/latest/ for how to use these components.
 ## Generate a route:
 
 ```bash
-yo angular-material:route routename
+yo angular-material:route routeName
 ```
 
 This will create ```public/js/controllers/routename-controller.js``` and ```public/partials/routename-partial.html``` files.
@@ -106,37 +106,39 @@ Result:
 ``` 
 var appName = angular.module('appName', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router']);
 
-appName.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+(function(app) {
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('routename', {
+        $stateProvider.state('routename', {
         url: '/routename',
         templateUrl: 'partials/routename-partial.html',
         controller: 'routenameController'
     })
 
     .state('home', {
-        url: '/',
-        templateUrl: 'partials/home-partial.html',
-        controller: 'HomeController'
-    })
+            url: '/',
+            templateUrl: 'partials/home-partial.html',
+            controller: 'HomeController'
+        })
 
-    .state('about', {
-        url: '/about',
-        templateUrl: 'partials/about-partial.html',
-        controller: 'AboutController'
-    });
+        .state('about', {
+            url: '/about',
+            templateUrl: 'partials/about-partial.html',
+            controller: 'AboutController'
+        });
+    }]);
+})(appName);
 
-}]);
 ```
 
 - public/js/controllers/routename-controller.js
 
 ```
-appName.controller('routenameController', ['$scope', function($scope){
-
-}]);
+(function(app) {
+    app.controller('routenameController', ['$scope', function($scope) {}]);
+})(appName);
 ```
 
 - public/partials/routename-partial.html
@@ -160,9 +162,11 @@ Adds extension -controller.js to filename and Controller to controllerName
 Result: public/js/controllers/controllerName-controller.js
 
 ```
-appName.controller('controllerNameController', ['$scope', function($scope){
-    
-}]);
+(function(app) {
+    app.controller('controllerNameController', ['$scope', function($scope) {
+
+    }]);
+})(appName);
 ```
 
 
@@ -178,41 +182,44 @@ Adds extension -directive.js to filename and Directive to directiveName
 Result: public/js/directives/directiveName-directive.js
 
 ```
-appName.directive('directiveNameDirective', ['', function(){
-    return {
-        link: function($scope, elem, attrs, controller) {
-            
-        }
-    };
-}]);
+(function(app) {
+    app.directive('directiveNameDirective', ['', function() {
+        return {
+            link: function($scope, elem, attrs, controller) {
+
+            }
+        };
+    }]);
+})(appName);
 ```
 
 ## Generate a verbose directive:
 
 ```bash
-yo angular-material:verbose-directive directiveName
+yo angular-material:verbose-directive verboseDirectiveName
 ```
 
 Adds extension -directive.js to filename and Directive to directiveName
 
 
-Result: public/js/directives/directiveName-directive.js
+Result: public/js/directives/verboseDirectiveName-directive.js
 
 ```
-appName.directive('directiveNameDirective', ['', function(){
-    return {
-        scope: {},
-        controller: function($scope, $element, $attrs, $transclude) {},
-        // require: 'ngModel',
-        // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-        // template: '',
-        // templateUrl: '',
-        // replace: true,
-        // transclude: true,
-        link: function($scope, elem, attrs, controller) {
-        }
-    };
-}]);
+(function(app) {
+    app.directive('verboseDirectiveNameDirective', ['', function() {
+        return {
+            scope: {},
+            controller: function($scope, $element, $attrs, $transclude) {},
+            // require: 'ngModel',
+            // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+            // template: '',
+            // templateUrl: '',
+            // replace: true,
+            // transclude: true,
+            link: function($scope, elem, attrs, controller) {}
+        };
+    }]);
+})(appName);
 ```
 
 ## Generate a factory:
@@ -226,9 +233,11 @@ Adds extension -factory.js to filename and Factory to factoryName
 Result: public/js/factories/factoryName-factory.js
 
 ```
-appName.factory('factoryNameFactory', ['', function(){
-    return {};
-}]);
+(function(app) {
+    app.factory('factoryNameFactory', ['', function() {
+        return {};
+    }]);
+})(appName);
 ```
 
 ## Generate a service:
@@ -241,9 +250,11 @@ Adds extension -service.js to filename and Service to serviceName
 
 Result: public/js/services/serviceName-service.js
 ```
-appName.service('serviceNameService', ['', function(){
-    
-}]);
+(function(app) {
+    app.service('serviceNameService', ['', function() {
+
+    }]);
+})(appName);
 ```
 
 ## Generate a filter:
@@ -256,11 +267,13 @@ Adds extension -filter.js to filename and Filter to filterName
 
 Result: public/js/filters/filterName-filter.js
 ```
-appName.filter('filterNameFilter', function() {
-    return function(input) {
-        return 'filterNameFilter filter:' + input;
-    };
-});
+(function(app) {
+    app.filter('filterNameFilter', function() {
+        return function(input) {
+            return 'filterNameFilter filter:' + input;
+        };
+    });
+})(appName);
 ```
 
 
