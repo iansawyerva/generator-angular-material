@@ -115,12 +115,12 @@ var appName = angular.module('appName', ['ngMaterial', 'ngAnimate', 'ngMessages'
         $urlRouterProvider.otherwise('/');
 
         $stateProvider.state('routename', {
-        url: '/routename',
-        templateUrl: 'partials/routename-partial.html',
-        controller: 'routenameController'
-    })
+            url: '/routename',
+            templateUrl: 'partials/routename-partial.html',
+            controller: 'routenameController'
+        })
 
-    .state('home', {
+        .state('home', {
             url: '/',
             templateUrl: 'partials/home-partial.html',
             controller: 'HomeController'
