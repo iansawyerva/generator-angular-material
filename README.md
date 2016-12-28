@@ -50,7 +50,7 @@ gulp spec
 gulp dist:package
 ```
 
-dist gulp tasks make all app specific JavaScript anonymous
+- dist gulp tasks make all app specific JavaScript anonymous
 
 ## Generate a component:
 
