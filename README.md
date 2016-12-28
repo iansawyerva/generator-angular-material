@@ -82,19 +82,22 @@ Example:
 ```
 
 Component list
-- autocomplete - server restart required
+
+SR = server restart required
+
+- autocomplete - SR
 - card
 - checkbox
-- chips - server restart required
+- chips - SR
 - content
-- dialog - server restart required
-- fab-speed-dial - server restart required
-- fab-toolbar - server restart required
-- menu - server restart required
+- dialog - SR
+- fab-speed-dial - SR
+- fab-toolbar - SR
+- menu - SR
 - menu-bar
 - nav-bar
-- select - server restart required
-- sidenav - server restart required
+- select - SR
+- sidenav - SR
 - slider
 - tabs
 
