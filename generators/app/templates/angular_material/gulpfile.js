@@ -5,9 +5,10 @@ var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var rename = require('gulp-rename');
 var inject = require('gulp-inject');
 var imagemin = require('gulp-imagemin');
-var wrap = require("gulp-wrap");
+var iife = require("gulp-iife");
 var Server = require('karma').Server;
 
 gulp.task('default', ['serve']);
@@ -118,8 +119,7 @@ gulp.task('uglify-js', function() {
         .pipe(concat('all.min.js'))
         .pipe(gulp.dest('./public/js/min/'))
         .pipe(uglify())
-        .pipe(gulp.dest('./public/js/min/'))
-        .pipe(gulp.dest('./dist/public/js/min/'));
+        .pipe(gulp.dest('./public/js/min/'));
 });
 
 gulp.task('index:dist', function() {
@@ -130,10 +130,11 @@ gulp.task('index:dist', function() {
         .pipe(gulp.dest('./dist'))
 });
 
-gulp.task('dist-wrap', function() {
-    gulp.src('./public/js/min/all.min.js')
-        .pipe(wrap('(function(window,angular){\n"use strict";\n<%= contents %>\n})(window,window.angular);'))
-        .pipe(gulp.dest('./public/js/min'));
+gulp.task('dist:iife', function() {
+    return gulp.src('./public/js/min/all.min.js')
+        .pipe(iife())
+        .pipe(rename('./public/js/min/anonymous.min.js'))
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('serve:dist', ['dist:package'], function() {
@@ -163,7 +164,7 @@ gulp.task('serve:dist', ['dist:package'], function() {
     gulp.watch('./bower_components/**/*.js', ['bower']);
 });
 
-gulp.task('dist:package', ['sass', 'bower', 'uglify-js', 'image', 'image-min', 'html', 'dist-wrap', 'index:dist']);
+gulp.task('dist:package', ['sass', 'bower', 'uglify-js', 'image', 'image-min', 'html', 'dist:iife', 'index:dist']);
 
 
 /**

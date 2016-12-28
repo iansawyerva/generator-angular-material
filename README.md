@@ -54,6 +54,8 @@ gulp dist:package
 
 - dist gulp tasks make all app specific JavaScript anonymous
 
+Gulp tasks might require ```sudo``` depending on your permissions
+
 ## Generate a component:
 
 ```bash
