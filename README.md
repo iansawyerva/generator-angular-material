@@ -46,12 +46,11 @@ gulp spec
 
 ## Create dist package
 
-dist gulp tasks make all app specific JavaScript anonymous
-
-
 ```bash
 gulp dist:package
 ```
+
+dist gulp tasks make all app specific JavaScript anonymous
 
 ## Generate a component:
 
