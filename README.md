@@ -81,7 +81,7 @@ Example:
 {{component}}
 ```
 
-Component list
+<strong>Component list</strong>
 
 SR = server restart required
 
