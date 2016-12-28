@@ -63,29 +63,42 @@ Gulp tasks might require ```sudo``` depending on your permissions
 
 For the below commands, if they create a new external dependency (new file), you will need to restart the server for changes to reflect properly.
 
-## Generate a component:
+## Generate components:
 
 ```bash
 yo angular-material:component
 ```
 
-Each time you inject a component, you must specify {{componentName}} where you would like it to be injected in your partial.
+Each time you inject a component, you must specify {{componentName}} where you would like it to be injected in your partial. This generator is spefically designed for the 'public/partials' directory only.
 
 - you can inject into multiple partials at the same time
 - you can inject multiple components at the same time
 
 Example:
 
-```
+``` - public/partials/about-partial.html
 <div class="text-center md-padding">About Page</div>
-{{autocomplete}}
-{{card}}
-{{card}}
-{{card}}
-{{fab-speed-dial}}
+<div class="some-container">
+    {{autocomplete}}
+    {{card}}
+    {{card}}
+    {{card}}
+    {{fab-speed-dial}}
+</div>
 ```
 
-Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
+``` - public/partials/home-partial.html
+<div class="text-center md-padding">Home Page</div>
+<div class="some-container">
+    {{dialog}}
+    {{select}}
+    {{card}}
+    {{card}}
+    {{menu}}
+</div>
+```
+
+Some components will generate a partial-name-component-controller.js in a "public/js/controllers/components" directory.
 
 <strong>Component list - must use exact name during injection</strong>
 
