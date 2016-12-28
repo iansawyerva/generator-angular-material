@@ -23,7 +23,7 @@ yo angular-material appName
 gulp serve
 ```
 
-## Run dist server - wraps compressed scripts in anonymous function during watch
+## Run dist server
 
 
 ```bash
@@ -44,7 +44,9 @@ gulp serve:spec
 gulp spec
 ```
 
-## Create dist package - wraps compressed scripts in anonymous function
+## Create dist package
+
+    - dist gulp tasks make all app specific JavaScript anonymous
 
 
 ```bash
