@@ -69,9 +69,7 @@ For the below commands, if they create a new external dependency (new file), you
 yo angular-material:component
 ```
 
-This will give you prompts for which partials you would like to inject into and what component you would like to inject.
-
-Each time you inject a component you must specify {{component-name}} where you would like it to be injected in your partial.
+Each time you inject a component, you must specify {{componentName}} where you would like it to be injected in your partial.
 
 - you can inject into multiple partials at the same time
 - you can inject multiple components at the same time
