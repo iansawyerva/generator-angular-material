@@ -76,14 +76,14 @@ Each time you inject a component you must specify {{component}} where you would 
 - you can inject into multiple partials at the same time
 - you can't inject different components at the same time
 
-Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
-
 Example:
 
 ```
 <div class="text-center md-padding">Home Page</div>
 {{component}}
 ```
+
+Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
 
 <strong>Component list</strong>
 
