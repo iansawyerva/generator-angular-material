@@ -32,7 +32,7 @@ gulp serve
 gulp serve:dist
 ```
 
-- compresses js/css/images
+- compresses js / css / images
 - all JavaScript is generated anonymous
 
 Note: restart the dist server on any file creation
@@ -57,7 +57,7 @@ gulp spec
 gulp dist:package
 ```
 
-- compresses js/css/images
+- compresses js / css / images
 - all JavaScript is generated anonymous
 
 Gulp tasks might require ```sudo``` depending on your permissions
