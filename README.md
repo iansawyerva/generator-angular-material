@@ -105,21 +105,19 @@ Some components will generate a partial-name-component-controller.js in a "publi
 
 <strong>Component list - must use exact name during injection</strong>
 
-SR = server restart required
-
-- autocomplete - SR
+- autocomplete
 - card
 - checkbox
-- chips - SR
+- chips
 - content
-- dialog - SR
-- fab-speed-dial - SR
-- fab-toolbar - SR
-- menu - SR
+- dialog
+- fab-speed-dial
+- fab-toolbar
+- menu
 - menu-bar
 - nav-bar
-- select - SR
-- sidenav - SR
+- select
+- sidenav
 - slider
 - tabs
 
