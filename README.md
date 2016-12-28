@@ -71,6 +71,9 @@ Each time you inject a component you must specify {{component}} where you would 
 
 Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
 
+- you can inject into multiple partials at the same time
+- you can't inject different components at the same time
+
 Example:
 
 ```
@@ -293,8 +296,8 @@ Besides for editing the main "index.html" file in the "dev" directory, most edit
 
 @TODO 
 
-	- Update to count for Windows directories
-    - Make tmp directory to trigger server restarts
+	- update to count for Windows directories
+    - make tmp directory to trigger server restarts
 
 ## License
 
