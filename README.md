@@ -23,7 +23,7 @@ yo angular-material appName
 gulp serve
 ```
 
-All JavaScript is generated anonymous besides for the angular.module declaration.
+- all JavaScript is generated anonymous besides for the angular.module declaration.
 
 ## Run dist server
 
@@ -32,8 +32,10 @@ All JavaScript is generated anonymous besides for the angular.module declaration
 gulp serve:dist
 ```
 
-- restart the dist server on any file creation
-- dist gulp tasks compress js/css and make the angular.module declaration anonymous
+- compresses js/css
+- all JavaScript is generated anonymous
+
+Note: restart the dist server on any file creation
 
 ## Run test server
 
@@ -55,7 +57,8 @@ gulp spec
 gulp dist:package
 ```
 
-- dist gulp tasks compress js/css and make the angular.module declaration anonymous
+- compresses js/css
+- all JavaScript is generated anonymous
 
 Gulp tasks might require ```sudo``` depending on your permissions
 
