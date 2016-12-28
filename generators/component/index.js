@@ -27,55 +27,57 @@ var service = {
                 service.partials.push('./public/partials/' + partials.flavour[i]);
             }
             return this.prompt([{
-                type: 'list',
+                type: 'checkbox',
                 name: 'flavour',
-                message: 'Which component would you like to inject?',
+                message: 'Which components would you like to inject?',
                 choices: components,
                 default: 0,
                 pageSize: 15
-            }]).then((component) => {
-                service.component = component.flavour;
+            }]).then((components) => {
+                service.components = components.flavour;
             });
         });
     },
     writing: function() {
         this.appname = process.cwd().match(/([^\/]*)\/*$/)[1];
-        this.controllerName = service.component.replace(/ /g, '');
-        this.controllerName = this.controllerName.replace(/-/g, '');
         for (var i = 0; i < service.partials.length; i++) {
-            if (this.fs.exists(this.templatePath('./' + service.component + '.js'))) {
-                this.fs.copyTpl(
-                        this.templatePath('./' + service.component + '.js'),
-                        this.destinationPath('./public/js/controllers/components/' + this.controllerName + '-controller.js'), {
-                            AppName: this.appname,
-                            ControllerName: this.controllerName + 'Controller'
-                        }
-                    ),
+            for (var x = 0; x < service.components.length; x++) {
+                this.controllerName = service.components[x].replace(/ /g, '');
+                this.controllerName = this.controllerName.replace(/-/g, '');
+                var component = '{{' + service.components[x] + '}}';
+                var re = new RegExp(component, "g");
+                if (this.fs.exists(this.templatePath('./' + service.components[x] + '.js'))) {
                     this.fs.copyTpl(
-                        this.templatePath('./' + service.component + '.html'),
-                        this.destinationPath(this.templatePath('./tmp/' + service.component + '.html')), {
-                            ControllerName: this.controllerName + 'Controller'
-                        }
-                    );
-                this.component = this.fs.read(this.templatePath('./tmp/' + service.component + '.html'));
-                this.partial = this.fs.read(service.partials[i]);
-                this.partial = this.partial.replace('{{component}}', this.component)
-                this.fs.write(service.partials[i], this.partial);
-                this.fs.delete(this.templatePath('./tmp/' + service.component + '.html'));
-            } else {
-                this.component = this.fs.read(this.templatePath('./' + service.component + '.html'));
-                this.partial = this.fs.read(service.partials[i]);
-                this.partial = this.partial.replace('{{component}}', this.component)
-                this.fs.write(service.partials[i], this.partial);
+                            this.templatePath('./' + service.components[x] + '.js'),
+                            this.destinationPath('./public/js/controllers/components/' + this.controllerName + '-controller.js'), {
+                                AppName: this.appname,
+                                ControllerName: this.controllerName + 'Controller'
+                            }
+                        ),
+                        this.fs.copyTpl(
+                            this.templatePath('./' + service.components[x] + '.html'),
+                            this.destinationPath(this.templatePath('./tmp/' + service.components[x] + '.html')), {
+                                ControllerName: this.controllerName + 'Controller'
+                            }
+                        );
+                    this.component = this.fs.read(this.templatePath('./tmp/' + service.components[x] + '.html'));
+                    this.partial = this.fs.read(service.partials[i]);
+                    this.partial = this.partial.replace(re, this.component)
+                    this.fs.write(service.partials[i], this.partial);
+                    this.fs.delete(this.templatePath('./tmp/' + service.components[x] + '.html'));
+                } else {
+                    this.component = this.fs.read(this.templatePath('./' + service.components[x] + '.html'));
+                    this.partial = this.fs.read(service.partials[i]);
+                    this.partial = this.partial.replace(re, this.component)
+                    this.fs.write(service.partials[i], this.partial);
+                }
             }
         }
 
     },
 
     install: function() {
-        for (var i = 0; i < service.partials.length; i++) {
-            this.log(service.component + ' component has been injected into ' + service.partials[i] + '!');
-        }
+        this.log('The components have been injected!');
     }
 };
 

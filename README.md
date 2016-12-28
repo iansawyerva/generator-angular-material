@@ -71,21 +71,25 @@ yo angular-material:component
 
 This will give you prompts for which partials you would like to inject into and what component you would like to inject.
 
-Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
+Each time you inject a component you must specify {{component-name}} where you would like it to be injected in your partial.
 
 - you can inject into multiple partials at the same time
-- you can't inject different components at the same time
+- you can inject multiple components at the same time
 
 Example:
 
 ```
-<div class="text-center md-padding">Home Page</div>
-{{component}}
+<div class="text-center md-padding">About Page</div>
+{{autocomplete}}
+{{card}}
+{{card}}
+{{card}}
+{{fab-speed-dial}}
 ```
 
 Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
 
-<strong>Component list</strong>
+<strong>Component list - must use exact name during injection</strong>
 
 SR = server restart required
 
