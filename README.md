@@ -57,6 +57,8 @@ gulp dist:package
 
 Gulp tasks might require ```sudo``` depending on your permissions
 
+For the below commands, you might need to restart the server for changes to reflect properly.
+
 ## Generate a component:
 
 ```bash
@@ -102,8 +104,6 @@ yo angular-material:route routeName
 ```
 
 This will create ```public/js/controllers/routename-controller.js``` and ```public/partials/routename-partial.html``` files.
-
-You might need to restart the server for these changes to reflect.
 
 Result:
 
@@ -294,6 +294,7 @@ Besides for editing the main "index.html" file in the "dev" directory, most edit
 @TODO 
 
 	- Update to count for Windows directories
+    - Make tmp directory to trigger server restarts
 
 ## License
 
