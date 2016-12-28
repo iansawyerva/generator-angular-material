@@ -69,10 +69,10 @@ This will give you prompts for which partials you would like to inject into and 
 
 Each time you inject a component you must specify {{component}} where you would like it to be injected in your partial.
 
-Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
-
 - you can inject into multiple partials at the same time
 - you can't inject different components at the same time
+
+Some components will generate a {{component name}}-controller.js in a "public/js/controllers/components" directory.
 
 Example:
 
