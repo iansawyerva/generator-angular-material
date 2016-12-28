@@ -30,6 +30,7 @@ gulp serve
 gulp serve:dist
 ```
 
+- Restart the dist server on any file creation.
 - dist gulp tasks make all app specific JavaScript anonymous
 
 ## Run test server
