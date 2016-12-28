@@ -296,8 +296,8 @@ Besides for editing the main "index.html" file in the "dev" directory, most edit
 
 @TODO 
 
-	- update to count for Windows directories
-    - make tmp directory to trigger server restarts
+- update to count for Windows directories
+- make tmp directory to trigger server restarts
 
 ## License
 
