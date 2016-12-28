@@ -57,7 +57,7 @@ gulp dist:package
 
 Gulp tasks might require ```sudo``` depending on your permissions
 
-For the below commands, you might need to restart the server for changes to reflect properly.
+For the below commands, if they create a new external dependency (new file), you will need to restart the server for changes to reflect properly.
 
 ## Generate a component:
 
@@ -82,19 +82,19 @@ Example:
 ```
 
 Component list
-- autocomplete
+- autocomplete - server restart required
 - card
 - checkbox
-- chips
+- chips - server restart required
 - content
-- dialog
-- fab-speed-dial
-- fab-toolbar
-- menu
+- dialog - server restart required
+- fab-speed-dial - server restart required
+- fab-toolbar - server restart required
+- menu - server restart required
 - menu-bar
 - nav-bar
-- select
-- sidenav
+- select - server restart required
+- sidenav - server restart required
 - slider
 - tabs
 
