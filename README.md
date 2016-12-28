@@ -76,7 +76,9 @@ Each time you inject a component, you must specify {{componentName}} where you w
 
 Example:
 
-``` - public/partials/about-partial.html
+- public/partials/about-partial.html
+
+``` 
 <div class="text-center md-padding">About Page</div>
 <div class="some-container">
     {{autocomplete}}
@@ -87,7 +89,8 @@ Example:
 </div>
 ```
 
-``` - public/partials/home-partial.html
+ - public/partials/home-partial.html
+```
 <div class="text-center md-padding">Home Page</div>
 <div class="some-container">
     {{dialog}}
