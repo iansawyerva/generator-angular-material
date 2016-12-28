@@ -9,11 +9,12 @@ var rename = require('gulp-rename');
 var inject = require('gulp-inject');
 var imagemin = require('gulp-imagemin');
 var iife = require("gulp-iife");
+var cleanCSS = require('gulp-clean-css');
 var Server = require('karma').Server;
 
 gulp.task('default', ['serve']);
 
-gulp.task('init', ['sass', 'bower', 'js', 'uglify-js', 'image', 'image-min', 'html', 'index:dist']);
+gulp.task('init', ['sass', 'bower', 'js', 'uglify-js', 'image', 'image-min', 'html', 'index']);
 
 // Static Server + watching js/scss/html files
 gulp.task('serve', ['init'], function() {
@@ -70,7 +71,9 @@ gulp.task('image', function() {
 gulp.task('sass', function() {
     return gulp.src('./scss/**/*.scss')
         .pipe(sass())
+        .pipe(gulp.dest('./public/css'))
         .pipe(gulp.dest('./dev/public/css'))
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(gulp.dest('./dist/public/css'))
         .pipe(browserSync.stream());
 });
@@ -80,7 +83,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest('./dev/public/js'))
 });
 
-gulp.task('bower', ['index'], function() {
+gulp.task('bower', ['index', 'index:dist'], function() {
     return gulp.src(['./bower_components/**/*.min.js', './bower_components/**/*.min.css'])
         .pipe(gulp.dest('./dev/bower_components'))
         .pipe(gulp.dest('./dist/bower_components'));
@@ -96,12 +99,12 @@ gulp.task('html-watch', ['html'], function(done) {
     done();
 });
 
-gulp.task('sass-watch', ['sass', 'index'], function(done) {
+gulp.task('sass-watch', ['sass', 'index', 'index:dist'], function(done) {
     browserSync.reload();
     done();
 });
 
-gulp.task('js-watch', ['js', 'uglify-js', 'index'], function(done) {
+gulp.task('js-watch', ['js', 'uglify-js', 'index', 'index:dist'], function(done) {
     browserSync.reload();
     done();
 });
@@ -168,9 +171,10 @@ gulp.task('serve:dist', ['dist:package'], function() {
 gulp.task('dist:package', ['sass', 'bower', 'uglify-js', 'image', 'image-min', 'html', 'dist:iife', 'index:dist']);
 
 
-/**
- * Run test once and exit
- */
+//TDD
+
+/* Run test once and exit */
+
 gulp.task('spec', function(done) {
     new Server({
         configFile: __dirname + '/karma.conf.js',
@@ -178,9 +182,8 @@ gulp.task('spec', function(done) {
     }, done).start();
 });
 
-/**
- * Watch for file changes and re-run tests on each change
- */
+/* Watch for file changes and re-run tests on each change */
+
 gulp.task('serve:spec', function(done) {
     new Server({
         configFile: __dirname + '/karma.conf.js'
