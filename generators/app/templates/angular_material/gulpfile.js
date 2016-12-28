@@ -61,8 +61,8 @@ gulp.task('html', function() {
 
 gulp.task('image', function() {
     return gulp.src('./public/images/*')
-        .pipe(gulp.dest('./dev/public/images/'))
-        .pipe(gulp.dest('./dist/public/images/'))
+        .pipe(gulp.dest('./dev/public/images'))
+        .pipe(gulp.dest('./dist/public/images'))
         .pipe(browserSync.stream());
 });
 
@@ -111,7 +111,7 @@ gulp.task('js-watch', ['js', 'uglify-js', 'index'], function(done) {
 gulp.task('image-min', function() {
     gulp.src(['./public/**/*.png', './public/**/*.jpg', './public/**/*.gif', './public/**/*.jpeg'])
         .pipe(imagemin())
-        .pipe(gulp.dest('./dist/public/images/'));
+        .pipe(gulp.dest('./dist/public'));
 });
 
 gulp.task('uglify-js', function() {
