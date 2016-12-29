@@ -47,7 +47,7 @@ gulp.task('serve', ['init'], function() {
 
 gulp.task('index', function() {
     var target = gulp.src('./dev/index.html');
-    var sources = gulp.src(['./bower_components/**/*.js', './public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js', './public/js/decorators/**/*.js', './bower_components/**/*.css', './public/css/**/*.css'], { read: false });
+    var sources = gulp.src(['./bower_components/**/*.js', './public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js', './bower_components/**/*.css', './public/css/**/*.css'], { read: false });
 
     return target.pipe(inject(sources))
         .pipe(gulp.dest('./dev'))
@@ -118,7 +118,7 @@ gulp.task('image-min', function() {
 });
 
 gulp.task('uglify-js', function() {
-    return gulp.src(['./public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js', './public/js/decorators/**/*.js'])
+    return gulp.src(['./public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js'])
         .pipe(concat('all.min.js'))
         .pipe(gulp.dest('./public/js/min/'))
         .pipe(uglify())
