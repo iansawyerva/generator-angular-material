@@ -1,8 +1,5 @@
 'use strict';
 const yeoman = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
-const util = require('util');
 const fs = require('fs');
 const partial_dir = './public/partials/';
 const partials = [];
