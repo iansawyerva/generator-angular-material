@@ -118,7 +118,7 @@ gulp.task('image-min', function() {
 });
 
 gulp.task('uglify-js', function() {
-    return gulp.src(['./public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/directives/**/*.js', './public/js/decorators/**/*.js'])
+    return gulp.src(['./public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js', './public/js/decorators/**/*.js'])
         .pipe(concat('all.min.js'))
         .pipe(gulp.dest('./public/js/min/'))
         .pipe(uglify())
