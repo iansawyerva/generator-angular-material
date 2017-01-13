@@ -1,5 +1,5 @@
 
-> Google&#39;s Angular Material - in progress
+> Google&#39;s Angular Material
 
 ## Installation
 
